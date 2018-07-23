@@ -798,15 +798,15 @@ snapshot data.
    format, and will continue to work as expected.
 
 
-.. |AttachDiskButton.png| image:: _static/images/attach-disk-icon.png
+.. |AttachDiskButton.png| image:: /_static/images/attach-disk-icon.png
    :alt: Attach Disk Button.
-.. |resize-volume-icon.png| image:: _static/images/resize-volume-icon.png
+.. |resize-volume-icon.png| image:: /_static/images/resize-volume-icon.png
    :alt: button to display the resize volume option.
-.. |resize-volume.png| image:: _static/images/resize-volume.png
+.. |resize-volume.png| image:: /_static/images/resize-volume.png
    :alt: option to resize a volume.
-.. |SnapshotButton.png| image:: _static/images/SnapshotButton.png
+.. |SnapshotButton.png| image:: /_static/images/SnapshotButton.png
    :alt: Snapshot Button.
-.. |DetachDiskButton.png| image:: _static/images/detach-disk-icon.png
+.. |DetachDiskButton.png| image:: /_static/images/detach-disk-icon.png
    :alt: Detach Disk Button.
-.. |Migrateinstance.png| image:: _static/images/migrate-instance.png
+.. |Migrateinstance.png| image:: /_static/images/migrate-instance.png
    :alt: button to migrate a volume.

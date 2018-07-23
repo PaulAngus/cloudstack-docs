@@ -1634,7 +1634,7 @@ zone      blacklisted.routes                                         Routes that
 ========  =========================================================  ======================================================================================================================================  
 
 
-.. |provisioning-overview.png: Conceptual overview of a basic deployment| image:: ./_static/images/provisioning-overview.png
-.. |vsphereclient.png: vSphere client| image:: ./_static/images/vsphere-client.png
-.. |addcluster.png: add a cluster| image:: ./_static/images/add-cluster.png
-.. |ConsoleButton.png: button to launch a console| image:: ./_static/images/console-icon.png
+.. |provisioning-overview.png: Conceptual overview of a basic deployment| image:: /_static/images/provisioning-overview.png
+.. |vsphereclient.png: vSphere client| image:: /_static/images/vsphere-client.png
+.. |addcluster.png: add a cluster| image:: /_static/images/add-cluster.png
+.. |ConsoleButton.png: button to launch a console| image:: /_static/images/console-icon.png

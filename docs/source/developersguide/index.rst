@@ -34,12 +34,10 @@ This is the Apache CloudStack installation guide, for the Release-Notes please s
 
 .. note::
    This section gives information for those wishing to develop CloudStack either contributing to the CloudStack core software or
-   writing external plugins.  Futher information can also be found at CloudStack's wiki https://cwiki.apache.org/confluence/display/CLOUDSTACK/Home
+   writing external plugins.  Futher information can also be found at CloudStack's wiki   https://cwiki.apache.org/confluence/display/CLOUDSTACK/Home
    and on cloudstack mailing lists http://cloudstack.apache.org/mailing-lists.html
 
 .. toctree::
-
-.. _choices:
 
 Developers Guide
 ----------------
@@ -50,9 +48,7 @@ Developers Guide
    developer_guide
    dev
    plugins
-   alloc.rst
+   alloc
    ansible
    get_help
 
-
-.. include:: _global.rst

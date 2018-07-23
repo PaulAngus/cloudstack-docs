@@ -141,7 +141,7 @@ The Nuage VSP solution is NOT supported in Basic zone provisioning mode.
 2. When laying out the physical network configuration during zone provisioning, the **Guest** network traffic should be put in a separate physical network of its own.
 3. This physical network carrying the **Guest** traffic should have **VSP** as the **Isolation Method**.
 
-.. figure:: ../_static/images/nuage_vsp_isolation_method_setting.png
+.. figure:: /_static/images/nuage_vsp_isolation_method_setting.png
 
    Setting Isolation Method to VSP
 
@@ -154,13 +154,13 @@ Select **Edit** on the **Guest** traffic type panel and update the Traffic Label
 
 -  For KVM, use **alubr0** as the **KVM Traffic Label**.
 
-.. figure:: ../_static/images/nuage_kvm_traffic_label.jpg
+.. figure:: /_static/images/nuage_kvm_traffic_label.jpg
 
    Specifying the Traffic Type in KVM
 
 -  For VMware ESXi, use the switch name used by **dVRS** for guest networking as the **vSwitch Name**, leave the **VLAN ID** field blank, and select **VMware vNetwork Distributed Switch** in the **vSwitch Type** drop down field.
 
-.. figure:: ../_static/images/nuage_vmware_traffic_label.jpg
+.. figure:: /_static/images/nuage_vmware_traffic_label.jpg
 
    Specifying the Traffic Type in VMware ESXi
 
@@ -179,19 +179,19 @@ Nuage VSP must be added and enabled as a Network Service Provider in the CloudSt
 
          *OR* use Nuage VSP API calls to configure Nuage VSP as a Network Service Provider in the CloudStack Zone; see `Configure Nuage VSP API`_ in the Appendix of this document.
 
-.. figure:: ../_static/images/nuage_vsd_device_add.png
+.. figure:: /_static/images/nuage_vsd_device_add.png
 
    Adding Nuage VSD as the Network Service Provider
 
 :Step 5: Go to **Infrastructure > Zones > [zone name] > Physical Network 2 > Network Service Providers > Nuage Vsp > Devices > Details** tab as shown in the figure "Enabling Nuage VSP Network Service Provider" below. This indicates the state of Nuage VSP Network Service Provider. Enable Nuage VSP Network Service Provider by clicking **Enable**.
 
-.. figure:: ../_static/images/nuage_vsp_nsp_enable.png
+.. figure:: /_static/images/nuage_vsp_nsp_enable.png
 
    Enabling Nuage VSP Network Service Provider
 
 :Step 6: (Optional) View the Nuage VSP Network Service Provider status on the list of Network Service Providers on the **Infrastructure > Zones > [zone name] > Physical Network 2 > Network Service Providers** page;
 
-.. figure:: ../_static/images/nuage_vsp_nsp_status.png
+.. figure:: /_static/images/nuage_vsp_nsp_status.png
 
    Viewing Network Service Providers Status
 
@@ -218,7 +218,7 @@ Create and Enable Isolated Network Offering
 
 2. In the **Add network offering** panel, add a **Name** and a **Description** to the network offering. Select **Isolated** as the **Guest Type**. In the **Supported Services** field select services and providers that are supported by the Nuage VSP Plugin for Isolated Networks, see `Supported Features`_ at the beginning of this document.
 
-.. figure:: ../_static/images/nuage_iso_net_off.png
+.. figure:: /_static/images/nuage_iso_net_off.png
 
    Creating Isolated Network Offering
 
@@ -233,7 +233,7 @@ Create and Enable VPC Network Offering
 
 2. In the **Add network offering** panel, add a **Name** and a **Description** to the network offering. Select **Isolated** as the **Guest Type**. Select the **VPC** field. In the **Supported Services** field select services and providers that are supported by the Nuage VSP Plugin for VPCs, see `Supported Features`_ at the beginning of this document.
 
-.. figure:: ../_static/images/nuage_vpc_net_off.png
+.. figure:: /_static/images/nuage_vpc_net_off.png
 
    Creating VPC Network Offering
 
@@ -248,7 +248,7 @@ Create and Enable Shared Network Offering
 
 2. In the **Add network offering** panel, add a **Name** and a **Description** to the network offering. Select **Shared** as the **Guest Type**. In the **Supported Services** field select services and providers that are supported by the Nuage VSP Plugin for Shared Networks, see `Supported Features`_ at the beginning of this document.
 
-.. figure:: ../_static/images/nuage_sha_net_off.png
+.. figure:: /_static/images/nuage_sha_net_off.png
 
    Creating Shared Network Offering
 
@@ -267,7 +267,7 @@ Pre-created and Enabled Nuage VSP VPC Offering
 
 A VPC offering by the name **Nuage VSP VPC Offering** is pre-created and enabled in the list of **Service Offerings - VPC Offerings** (Select **Service Offerings > Select Offering: VPC Offerings**) which contains all the services and providers that are supported by the Nuage VSP Plugin for VPCs.
 
-.. figure:: ../_static/images/nuage_vsp_vpc_off.png
+.. figure:: /_static/images/nuage_vsp_vpc_off.png
 
    Pre-created and Enabled Nuage VSP VPC Offering
 
@@ -278,7 +278,7 @@ A VPC offering by the name **Nuage VSP VPC Offering** is pre-created and enabled
 
 2. In the **Add VPC Offering** panel, add a **Name** and a **Description** to the network offering. In the **Supported Services** field select services and providers that are supported by the Nuage VSP Plugin for VPCs, see `Supported Features`_ at the beginning of this document.
 
-.. figure:: ../_static/images/nuage_vpc_off.png
+.. figure:: /_static/images/nuage_vpc_off.png
 
    Creating VPC Offering
 
@@ -331,7 +331,7 @@ This feature is supported for both VPCs and Isolated Networks. In the case of VP
 
 All VPCs and Isolated networks that are created from a Nuage VSP Source NAT-enabled network offering have this feature enabled automatically. An example Nuage VSP Source NAT-enabled network offering is shown in the figure "Nuage VSP Source NAT-enabled Network Offering" below.
 
-.. figure:: ../_static/images/nuage_source_nat_net_off.png
+.. figure:: /_static/images/nuage_source_nat_net_off.png
 
    Nuage VSP Source NAT-enabled Network Offering
 
@@ -346,7 +346,7 @@ For the Static NAT without GW/PE feature to be operational in the CloudStack plu
 
 A new API called ``nuageunderlayvlaniprange`` has been introduced to enable/disable Static NAT via the Underlay feature support for CloudStack public IP ranges being used for Static NAT service. This API specifies whether the FIP to underlay support is required for the corresponding FIP subnet in Nuage VSD since there is no GW/PE in the data center. When the ``nuageunderlayvlaniprange`` API has been enabled/disabled for a public IP range and Static NAT is enabled on at-least one of its Public IPs, the plugin creates the corresponding shared FIP subnet in Nuage VSD using the ``sharednetworkresources`` API with the underlay flag set accordingly. The ``nuageunderlayvlaniprange`` API usage is shown in the figure "nuageunderlayvlaniprange API Usage" below.
 
-.. figure:: ../_static/images/nuage_underlay_api_usage.png
+.. figure:: /_static/images/nuage_underlay_api_usage.png
 
    nuageunderlayvlaniprange API Usage
 

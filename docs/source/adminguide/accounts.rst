@@ -346,7 +346,7 @@ LDAP groups:
 Once configured, on Add Account page, you will see an "Add LDAP Account" button
 which opens a dialog and the selected users can be imported.
 
-.. figure:: _static/images/CloudStack-ldap-screen1.png
+.. figure:: /_static/images/CloudStack-ldap-screen1.png
    :align:   center
 
 
@@ -358,7 +358,7 @@ directly in cloudstack.
 
 
 
-.. |button to dedicate a zone, pod,cluster, or host| image:: _static/images/dedicate-resource-button.png
+.. |button to dedicate a zone, pod,cluster, or host| image:: /_static/images/dedicate-resource-button.png
 
 Using a SAML 2.0 Identity Provider for User Authentication
 ----------------------------------------------------------

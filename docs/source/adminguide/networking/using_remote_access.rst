@@ -49,23 +49,23 @@ Mac OSX provide native IPsec VPN client.
    - VPN Type: L2TP over IPSec
    - Service Name: (ex: test-vpc1)
 
-   .. image:: ../_static/images/vpn/osxvpn_netconf.png
+   .. image:: /_static/images/vpn/osxvpn_netconf.png
       :align: center 
       :width: 400 px
 
 #. Configure L2TP over IPsec
 
-   .. image:: ../_static/images/vpn/osxvpn_form1.png
+   .. image:: /_static/images/vpn/osxvpn_form1.png
       :align: center
       :width: 400 px
 
-   .. image:: ../_static/images/vpn/osxvpn_form2.png
+   .. image:: /_static/images/vpn/osxvpn_form2.png
       :align: center
       :width: 400 px 
 
 #. Inside Authentication Settings...
 
-   .. image:: ../_static/images/vpn/osxvpn_form3.png
+   .. image:: /_static/images/vpn/osxvpn_form3.png
       :align: center
       :width: 400 px 
 
@@ -74,7 +74,7 @@ Mac OSX provide native IPsec VPN client.
    #. Click Apply to apply Network configuration changes.
    #. Click Connect to initiate VPN connection.
 
-      .. image:: ../_static/images/vpn/osxvpn_connected.png
+      .. image:: /_static/images/vpn/osxvpn_connected.png
          :align: center
          :width: 400 px
 
@@ -86,63 +86,63 @@ Following instruction have been perform using Windows 8.1 using Native VPN clien
 
 #. Create network VPN connection
 
-   .. image:: ../_static/images/vpn/win1.png
+   .. image:: /_static/images/vpn/win1.png
       :align: center 
       :width: 400 px
 
-   .. image:: ../_static/images/vpn/win2.png
+   .. image:: /_static/images/vpn/win2.png
       :align: center 
       :width: 400 px
 
-   .. image:: ../_static/images/vpn/win3.png
+   .. image:: /_static/images/vpn/win3.png
       :align: center 
       :width: 400 px
 
-   .. image:: ../_static/images/vpn/win4.png
+   .. image:: /_static/images/vpn/win4.png
       :align: center 
       :width: 400 px
 
-   .. image:: ../_static/images/vpn/win5.png
+   .. image:: /_static/images/vpn/win5.png
       :align: center 
       :width: 400 px
 
-   .. image:: ../_static/images/vpn/win6.png
+   .. image:: /_static/images/vpn/win6.png
       :align: center 
       :width: 400 px
 
 
 #. Configure VPN settings
 
-   .. image:: ../_static/images/vpn/win7.png
+   .. image:: /_static/images/vpn/win7.png
       :align: center 
       :width: 400 px
 
-   .. image:: ../_static/images/vpn/win8.png
+   .. image:: /_static/images/vpn/win8.png
       :align: center 
       :width: 400 px
 
-   .. image:: ../_static/images/vpn/win9.png
+   .. image:: /_static/images/vpn/win9.png
       :align: center 
       :width: 400 px
 
-   .. image:: ../_static/images/vpn/win10.png
+   .. image:: /_static/images/vpn/win10.png
       :align: center 
       :width: 400 px
 
-   .. image:: ../_static/images/vpn/win11.png
+   .. image:: /_static/images/vpn/win11.png
       :align: center 
       :width: 400 px
 
 #. Initiate VPN connection
 
-   .. image:: ../_static/images/vpn/win12.png
+   .. image:: /_static/images/vpn/win12.png
       :align: center 
       :width: 400 px
 
-   .. image:: ../_static/images/vpn/win13.png
+   .. image:: /_static/images/vpn/win13.png
       :align: center 
       :width: 400 px
 
-   .. image:: ../_static/images/vpn/win14.png
+   .. image:: /_static/images/vpn/win14.png
       :align: center 
       :width: 400 px

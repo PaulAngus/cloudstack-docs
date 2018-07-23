@@ -44,9 +44,6 @@ the administrator guide or the Release-Notes please see:
 
 .. toctree::
 
-.. _choices:
-
-
 
 CloudStack Quick Installation Guide
 -----------------------------------

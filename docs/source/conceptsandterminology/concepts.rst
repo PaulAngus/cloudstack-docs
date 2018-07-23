@@ -127,7 +127,7 @@ this case, a very simple infrastructure consisting of one host running
 hypervisor software). In its smallest deployment, a single machine can act as 
 both the Management Server and the hypervisor host (using the KVM hypervisor).
 
-.. image:: _static/images/basic-deployment.png
+.. image:: /_static/images/basic-deployment.png
 
 A more full-featured installation consists of a highly-available multi-node 
 Management Server installation and up to tens of thousands of hosts using any 
@@ -232,7 +232,7 @@ managing widely-dispersed zones from a single central Management Server.
 Usage records can also be consolidated and tracked at the region level,
 creating reports or invoices for each geographic region.
 
-|region-overview.png: Nested structure of a region.|
+| /_static/images/region-overview.png: Nested structure of a region.|
 
 Regions are visible to the end user. When a user starts a guest VM on a
 particular CloudStack Management Server, the user is implicitly
@@ -262,7 +262,7 @@ A zone consists of:
 
 -  Secondary storage, which is shared by all the pods in the zone.
 
-|zone-overview.png: Nested structure of a simple zone.|
+| /_static/images/zone-overview.png: Nested structure of a simple zone.|
 
 Zones are visible to the end user. When a user starts a guest VM, the
 user must select a zone for their guest. Users might also be required to
@@ -326,7 +326,7 @@ contain one or more pods. A pod consists of one or more clusters of
 hosts and one or more primary storage servers. Pods are not visible to
 the end user.
 
-|pod-overview.png: Nested structure of a simple pod|
+| /_static/images/pod-overview.png: Nested structure of a simple pod|
 
 
 About Clusters
@@ -349,7 +349,7 @@ Best Practices.
 A cluster consists of one or more hosts and one or more primary storage
 servers.
 
-|cluster-overview.png: Structure of a simple cluster|
+| /_static/images/cluster-overview.png: Structure of a simple cluster|
 
 CloudStack allows multiple clusters in a cloud deployment.
 
@@ -716,10 +716,10 @@ techniques:
    addresses.
 
 
-.. |1000-foot-view.png: Overview of CloudStack| image:: ./_static/images/1000-foot-view.png
-.. |basic-deployment.png: Basic two-machine deployment| image:: ./_static/images/basic-deployment.png
-.. |infrastructure_overview.png: Nested organization of a zone| image:: ./_static/images/infrastructure-overview.png
-.. |region-overview.png: Nested structure of a region.| image:: ./_static/images/region-overview.png
-.. |zone-overview.png: Nested structure of a simple zone.| image:: ./_static/images/zone-overview.png
-.. |pod-overview.png: Nested structure of a simple pod| image:: ./_static/images/pod-overview.png
-.. |cluster-overview.png: Structure of a simple cluster| image:: ./_static/images/cluster-overview.png
+.. | /_static/images/1000-foot-view.png: Overview of CloudStack| image:: /_static/images/1000-foot-view.png
+.. | /_static/images/basic-deployment.png: Basic two-machine deployment| image:: /_static/images/basic-deployment.png
+.. | /_static/images/infrastructure_overview.png: Nested organization of a zone| image:: /_static/images/infrastructure-overview.png
+.. | /_static/images/region-overview.png: Nested structure of a region.| image:: /_static/images/region-overview.png
+.. | /_static/images/zone-overview.png: Nested structure of a simple zone.| image:: /_static/images/zone-overview.png
+.. | /_static/images/pod-overview.png: Nested structure of a simple pod| image:: /_static/images/pod-overview.png
+.. | /_static/images/cluster-overview.png: Structure of a simple cluster| image:: /_static/images/cluster-overview.png

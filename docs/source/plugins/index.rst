@@ -47,11 +47,12 @@ Plugins
 .. toctree::
    :maxdepth: 2
 
-   cloudian-connector.rst
+   cloudian-connector
    nicira-plugin
    nuage-plugin
    vxlan.rst
    ovs-plugin
    ipv6
+   quota
    autoscale_without_netscaler.rst
 

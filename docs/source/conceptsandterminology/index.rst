@@ -80,5 +80,3 @@ Storage Setup
    :maxdepth: 2
 
    storage_setup
-
-.. include:: _global.rst

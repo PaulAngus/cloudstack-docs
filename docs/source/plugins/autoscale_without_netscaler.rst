@@ -58,7 +58,7 @@ Configuration
 
 Specify the following:
 
-.. image:: ../_static/images/autoscale-config.png
+.. image:: /_static/images/autoscale-config.png
 
 -  Template: A template consists of a base OS image and application. A 
    template is used to provision the new instance of an application on a 

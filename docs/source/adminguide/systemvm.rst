@@ -551,9 +551,9 @@ Zone, copying templates between Zones, and snapshot backups.
 The administrator can log in to the secondary storage VM if needed.
 
 
-.. |update-ssl.png| image:: _static/images/update-ssl.png
+.. |update-ssl.png| image:: /_static/images/update-ssl.png
    :alt: Updating Console Proxy SSL Certificate
-.. |vr-upgrade.png| image:: _static/images/vr-upgrade.png
+.. |vr-upgrade.png| image:: /_static/images/vr-upgrade.png
    :alt: Button to upgrade VR to use the new template.
 
 .. include:: /_global.rst

@@ -425,7 +425,7 @@ and resources.
       or you cancel the invitation.
 
 
-.. |Edits Parameters| image:: _static/images/edit-icon.png
-.. |Searches projects| image:: _static/images/search-button.png
-.. |Removes a project| image:: _static/images/delete-button.png
-.. |Suspends a project| image:: _static/images/suspend-icon.png
+.. |Edits Parameters| image:: /_static/images/edit-icon.png
+.. |Searches projects| image:: /_static/images/search-button.png
+.. |Removes a project| image:: /_static/images/delete-button.png
+.. |Suspends a project| image:: /_static/images/suspend-icon.png
