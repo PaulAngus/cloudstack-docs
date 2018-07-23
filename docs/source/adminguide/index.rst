@@ -19,22 +19,16 @@
    contain the root `toctree` directive.
 
 
-CloudStack Administration Documentation
-=======================================
-
 .. figure:: /_static/images/acslogo.png
    :align: center
 
+CloudStack Administration Documentation
+=======================================
+
 This guide is aimed at Administrators of a CloudStack based Cloud, 
-for Release Notes, Installation and General introduction to CloudStack 
-see the following guides:
-
-- `Documentation Start <http://docs.cloudstack.apache.org>`_
-
-- `Installation Guide <http://docs.cloudstack.apache.org/projects/cloudstack-installation>`_
+for Release Notes see the following guides:
 
 - `Release Notes <http://docs.cloudstack.apache.org/projects/cloudstack-release-notes>`_
-
 
 User Interface
 --------------

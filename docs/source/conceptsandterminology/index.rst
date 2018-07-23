@@ -18,14 +18,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-
-CloudStack Concepts and Terminology
-===================================
-
 .. figure:: /_static/images/acslogo.png
    :align: center
    :target: http://cloudstack.apache.org/
 
+
+CloudStack Concepts and Terminology
+===================================
 
 This is the Apache CloudStack installation guide, for the Documentation home, 
 the administrator guide or the Release-Notes please see:

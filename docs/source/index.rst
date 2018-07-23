@@ -18,24 +18,30 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Apache CloudStack's documentation!
-=============================================
+.. figure:: /_static/images/acslogo.png
+   :align: center
+
+Welcome to Apache CloudStack's Documentation
+============================================
+
+We have a number of guides, starting with a guide to cloudstack's terminology and concepts, moving through some information about possible topologies.  We then have a quick start guide to help you get a very simple cloudstack up and running.  Followed by the full installation guide, an administrator's guide and then further detailed guides on complex configurations.
+
+Information can also be found at CloudStack's wiki https://cwiki.apache.org/confluence/display/CLOUDSTACK/Home  and on cloudstack mailing lists http://cloudstack.apache.org/mailing-lists.html
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Contents:
 
    conceptsandterminology/index
    quickinstallationguide/index
-   adminguide/index
    installguide/index
+   adminguide/index
    developersguide/index
    plugins/index
 
 
-Indices and tables
+Indices and Tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`

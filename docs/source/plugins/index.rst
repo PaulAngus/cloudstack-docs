@@ -18,72 +18,40 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-
 .. figure:: /_static/images/acslogo.png
    :align: center
    :target: http://cloudstack.apache.org/
 
-CloudStack Installation Documentation
-=====================================
 
-This is the Apache CloudStack installation guide, for the Release-Notes please see:
+CloudStack Plugins Guide
+=========================
+
+
+This is the Apache CloudStack Plugins guide, for the Release-Notes please see:
+
 
 -  `Release Notes`_
 
+.. note::
+   This section gives information for those wishing to develop CloudStack either contributing to the CloudStack core software or
+   writing external plugins
 
 .. toctree::
 
 .. _choices:
 
 
-Building from Source
---------------------
+Plugins
+-------
+
 .. toctree::
    :maxdepth: 2
 
-   building_from_source
+   cloudian-connector.rst
+   nicira-plugin
+   nuage-plugin
+   vxlan.rst
+   ovs-plugin
+   ipv6
+   autoscale_without_netscaler.rst
 
-
-.. _installation:
-
-General Installation
---------------------
-.. toctree::
-   :maxdepth: 2
-
-   overview/index
-   management-server/index
-
-
-.. _configuration:
-
-Configuration
--------------
-.. toctree::
-   :maxdepth: 2
-
-   configuration
-
-
-.. _hypervisors:
-
-Hypervisor Setup
-----------------
-.. toctree::
-   :maxdepth: 2
-   :glob:
-
-   hypervisor/*
-
-.. optional:
-
-
-Optional Installation 
----------------------
-.. toctree::
-   :maxdepth: 2
-
-   optional_installation
-   encryption
-
-.. include:: _global.rst

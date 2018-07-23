@@ -19,8 +19,8 @@
    contain the root `toctree` directive.
 
 
-CloudStack Installation Documentation
-=====================================
+CloudStack Quick Installation Guide
+===================================
 
 .. figure:: /_static/images/acslogo.png
    :align: center
@@ -48,8 +48,8 @@ the administrator guide or the Release-Notes please see:
 
 
 
-Quick Installation Guide
-------------------------
+CloudStack Quick Installation Guide
+-----------------------------------
 .. toctree::
    :maxdepth: 2
 

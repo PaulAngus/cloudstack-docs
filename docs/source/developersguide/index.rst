@@ -18,125 +18,41 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-
-CloudStack Installation Documentation
-=====================================
-
 .. figure:: /_static/images/acslogo.png
    :align: center
    :target: http://cloudstack.apache.org/
 
 
-This is the Apache CloudStack installation guide, for the Documentation home, 
-the administrator guide or the Release-Notes please see:
+CloudStack Developers Guide
+===========================
 
--  `Documentation home`_
 
--  `Administration Guide`_
+This is the Apache CloudStack installation guide, for the Release-Notes please see:
+
 
 -  `Release Notes`_
 
 .. note::
-   In this guide we first go through some design and architectural choices_ to 
-   build your cloud. Then we dive into a single node quick start guide_ to 
-   give you a feel for the installation process. The source installation 
-   steps_ are given in the follow-on section for people who want to build 
-   their own packages. Otherwise you can use the general installation_ which 
-   makes use of community maintained package repositories. The rest of the 
-   guide goes through the configuration_ of the data-center and the setup of 
-   the network_, storage_ and hypervisors_.
+   This section gives information for those wishing to develop CloudStack either contributing to the CloudStack core software or
+   writing external plugins.  Futher information can also be found at CloudStack's wiki https://cwiki.apache.org/confluence/display/CLOUDSTACK/Home
+   and on cloudstack mailing lists http://cloudstack.apache.org/mailing-lists.html
 
 .. toctree::
 
 .. _choices:
 
-
-Choosing a Deployment Architecture
-----------------------------------
-.. toctree::
-   :maxdepth: 2
-
-   choosing_deployment_architecture
-
-.. _guide:
-
-
-Quick Installation Guide
-------------------------
-.. toctree::
-   :maxdepth: 2
-
-   qig
-
-
-.. _steps:
-
-Source Installation
--------------------
-.. toctree::
-   :maxdepth: 2
-
-   building_from_source
-
-
-.. _installation:
-
-General Installation
---------------------
-.. toctree::
-   :maxdepth: 2
-
-   overview/index
-   management-server/index
-
-
-.. _configuration:
-
-Configuration
--------------
-.. toctree::
-   :maxdepth: 2
-
-   configuration
-
-
-.. _hypervisors:
-
-Hypervisor Setup
+Developers Guide
 ----------------
-.. toctree::
-   :maxdepth: 2
-   :glob:
 
-   hypervisor/*
-
-.. _network:
-
-
-Network Setup
--------------
 .. toctree::
    :maxdepth: 2
 
-   network_setup
+   developer_guide
+   dev
+   plugins
+   alloc.rst
+   ansible
+   get_help
 
-.. _storage:
-
-
-Storage Setup
--------------
-.. toctree::
-   :maxdepth: 2
-
-   storage_setup
-
-
-Optional Installation 
----------------------
-.. toctree::
-   :maxdepth: 2
-
-   optional_installation
-   encryption
 
 .. include:: _global.rst
