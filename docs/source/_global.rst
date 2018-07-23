@@ -20,3 +20,11 @@
 .. _CloudStack Installation Guide: http://docs.cloudstack.apache.org/projects/cloudstack-installation
 .. _CloudStack Administrator's Guide: http://docs.cloudstack.apache.org/projects/cloudstack-administration
 .. _CloudStack Apidocs: http://cloudstack.apache.org/docs/api/
+
+
+.. Latest version systemvm template URL
+.. |sysvm64-url-xen|    replace:: http://download.cloudstack.org/systemvm/4.11/systemvmtemplate-4.11.1-xen.vhd.bz2
+.. |sysvm64-url-kvm|    replace:: http://download.cloudstack.org/systemvm/4.11/systemvmtemplate-4.11.1-kvm.qcow2.bz2
+.. |sysvm64-url-vmware| replace:: http://download.cloudstack.org/systemvm/4.11/systemvmtemplate-4.11.1-vmware.ova
+.. |sysvm64-url-hyperv| replace:: http://download.cloudstack.org/systemvm/4.11/systemvmtemplate-4.11.1-hyperv.vhd.zip
+.. |sysvm64-url-ovm|    replace:: http://download.cloudstack.org/systemvm/4.11/systemvmtemplate-4.11.1-ovm.raw.bz2

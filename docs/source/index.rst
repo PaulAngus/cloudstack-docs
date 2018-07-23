@@ -38,6 +38,7 @@ Information can also be found at CloudStack's wiki https://cwiki.apache.org/conf
    adminguide/index
    developersguide/index
    plugins/index
+   releasenotes/index
 
 
 Indices and Tables
