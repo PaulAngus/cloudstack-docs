@@ -33,7 +33,7 @@ Information can also be found at CloudStack's wiki https://cwiki.apache.org/conf
    :caption: Contents:
 
    conceptsandterminology/index
-   quickinstallationguide/index
+   quickinstallationguide/qig
    installguide/index
    adminguide/index
    developersguide/index

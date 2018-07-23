@@ -14,10 +14,6 @@
    under the License.
 
 
-Storage Setup
-=============
-
-
 Primary Storage
 ---------------
 

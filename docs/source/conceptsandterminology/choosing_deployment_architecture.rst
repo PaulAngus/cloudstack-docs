@@ -14,8 +14,6 @@
    under the License.
 
 
-Choosing a Deployment Architecture
-==================================
 
 The architecture used in a deployment will vary depending on the size
 and purpose of the deployment. This section contains examples of

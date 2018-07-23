@@ -12,10 +12,7 @@
    KIND, either express or implied.  See the License for the
    specific language governing permissions and limitations
    under the License.
-   
 
-Working with System Virtual Machines
-====================================
 
 CloudStack uses several types of system virtual machines to perform
 tasks in the cloud. In general CloudStack manages these system VMs and

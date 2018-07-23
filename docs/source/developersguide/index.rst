@@ -27,20 +27,7 @@ CloudStack Developers Guide
 ===========================
 
 
-This is the Apache CloudStack installation guide, for the Release-Notes please see:
-
-
--  `Release Notes`_
-
-.. note::
-   This section gives information for those wishing to develop CloudStack either contributing to the CloudStack core software or
-   writing external plugins.  Futher information can also be found at CloudStack's wiki   https://cwiki.apache.org/confluence/display/CLOUDSTACK/Home
-   and on cloudstack mailing lists http://cloudstack.apache.org/mailing-lists.html
-
-.. toctree::
-
-Developers Guide
-----------------
+This is the Apache CloudStack developers guide. This section gives information for those wishing to develop CloudStack either contributing to the CloudStack core software or writing external plugins.  Futher information can also be found at CloudStack's wiki   https://cwiki.apache.org/confluence/display/CLOUDSTACK/Home and on the CloudStack mailing lists http://cloudstack.apache.org/mailing-lists.html
 
 .. toctree::
    :maxdepth: 2

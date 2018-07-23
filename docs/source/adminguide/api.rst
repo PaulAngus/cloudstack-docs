@@ -12,10 +12,7 @@
    KIND, either express or implied.  See the License for the
    specific language governing permissions and limitations
    under the License.
-   
-
-CloudStack API
-==============
+ 
 
 The CloudStack API is a low level API that has been used to implement
 the CloudStack web UIs. It is also a good basis for implementing other

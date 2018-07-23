@@ -26,25 +26,9 @@
 CloudStack Concepts and Terminology
 ===================================
 
-This is the Apache CloudStack installation guide, for the Documentation home, 
-the administrator guide or the Release-Notes please see:
-
--  `Release Notes`_
-
-.. note::
-   In this guide we first go through some design and architectural choices_ to 
-   build your cloud. Then we dive into a single node quick start guide_ to 
-   give you a feel for the installation process. The source installation 
-   steps_ are given in the follow-on section for people who want to build 
-   their own packages. Otherwise you can use the general installation_ which 
-   makes use of community maintained package repositories. The rest of the 
-   guide goes through the configuration_ of the data-center and the setup of 
-   the network_, storage_ and hypervisors_.
+This is the Apache CloudStack installation guide. In this guide we first go through some design and architectural to build your cloud. 
 
 .. toctree::
-
-.. _choices:
-
 
 Concepts and Terminolgy
 ------------------------
@@ -80,3 +64,6 @@ Storage Setup
    :maxdepth: 2
 
    storage_setup
+
+
+.. include:: /_global.rst

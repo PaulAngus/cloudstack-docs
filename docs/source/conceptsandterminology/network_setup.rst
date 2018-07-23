@@ -14,9 +14,6 @@
    under the License.
 
 
-Network Setup
-=============
-
 Achieving the correct networking setup is crucial to a successful
 CloudStack installation. This section contains information to help you
 make decisions and follow the right procedures to get your network set

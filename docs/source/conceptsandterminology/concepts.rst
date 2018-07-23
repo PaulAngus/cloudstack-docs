@@ -14,10 +14,6 @@
    under the License.
 
 
-Concepts and Terminology
-========================
-
-Primary storage is associated with a cluster
 
 What is Apache CloudStack?
 --------------------------

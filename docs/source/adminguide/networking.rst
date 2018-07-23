@@ -12,10 +12,6 @@
    KIND, either express or implied.  See the License for the
    specific language governing permissions and limitations
    under the License.
-   
-
-Setting Up Networking for Users
-===============================
 
 Overview of Setting Up Networking for Users
 -------------------------------------------

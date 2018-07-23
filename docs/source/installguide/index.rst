@@ -26,15 +26,9 @@
 CloudStack Installation Documentation
 =====================================
 
-This is the Apache CloudStack installation guide, for the Release-Notes please see:
-
--  `Release Notes`_
-
+This is the Apache CloudStack installation guide
 
 .. toctree::
-
-.. _choices:
-
 
 Building from Source
 --------------------
@@ -86,4 +80,4 @@ Optional Installation
    optional_installation
    encryption
 
-.. include:: _global.rst
+.. include:: /_global.rst

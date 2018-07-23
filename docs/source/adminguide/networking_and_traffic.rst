@@ -12,10 +12,7 @@
    KIND, either express or implied.  See the License for the
    specific language governing permissions and limitations
    under the License.
-   
 
-Managing Networks and Traffic
-=============================
 
 In a CloudStack, guest VMs can communicate with each other using shared
 infrastructure with the security and user perception that the guests

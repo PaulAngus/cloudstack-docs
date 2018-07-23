@@ -14,8 +14,8 @@
    under the License.
 
 
-Building from Source
-====================
+Introduction
+------------
 
 The official CloudStack release is always in source code form. You will
 likely be able to find "convenience binaries," the source is the
@@ -36,8 +36,8 @@ If you are working with a unreleased version of CloudStack, see the
 INSTALL.md file in the top-level directory of the release.
 
 
-Getting the release
--------------------
+Downloading the release
+-----------------------
 
 You can download the latest CloudStack release from the `Apache
 CloudStack project download page 

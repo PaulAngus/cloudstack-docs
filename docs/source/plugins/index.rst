@@ -27,22 +27,7 @@ CloudStack Plugins Guide
 =========================
 
 
-This is the Apache CloudStack Plugins guide, for the Release-Notes please see:
-
-
--  `Release Notes`_
-
-.. note::
-   This section gives information for those wishing to develop CloudStack either contributing to the CloudStack core software or
-   writing external plugins
-
-.. toctree::
-
-.. _choices:
-
-
-Plugins
--------
+This is the Apache CloudStack Plugins guide. This section gives information for those wishing to develop CloudStack either contributing to the CloudStack core software or writing external plugins
 
 .. toctree::
    :maxdepth: 2

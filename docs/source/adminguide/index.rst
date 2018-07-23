@@ -25,10 +25,7 @@
 CloudStack Administration Documentation
 =======================================
 
-This guide is aimed at Administrators of a CloudStack based Cloud, 
-for Release Notes see the following guides:
-
-- `Release Notes <http://docs.cloudstack.apache.org/projects/cloudstack-release-notes>`_
+This guide is aimed at Administrators of a CloudStack based Cloud
 
 User Interface
 --------------

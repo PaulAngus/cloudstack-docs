@@ -14,9 +14,6 @@
    under the License.
 
 
-User Interface
-==============
-
 Log In to the UI
 ----------------
 

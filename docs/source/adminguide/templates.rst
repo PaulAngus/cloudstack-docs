@@ -14,9 +14,6 @@
    under the License.
 
 
-Working with Templates
-======================
-
 A template is a reusable configuration for virtual machines. When users
 launch VMs, they can choose from a list of templates in CloudStack.
 
