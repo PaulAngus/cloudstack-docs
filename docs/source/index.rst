@@ -18,8 +18,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. figure:: /_static/images/acslogo.png
-   :align: center
+
+|menu_acs_logo|
+
 
 Welcome to Apache CloudStack's Documentation
 ============================================
@@ -50,11 +51,6 @@ Information can also be found at CloudStack's wiki https://cwiki.apache.org/conf
    Apache CloudStack web site <http://cloudstack.apache.org/>
    Apache CloudStack Source Code <http://cloudstack.apache.org/downloads.html>
    Apache CloudStack on GitHub <https://github.com/apache/cloudstack>
-
-   
-
-
-
 
 
 

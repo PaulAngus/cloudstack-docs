@@ -552,5 +552,3 @@ The administrator can log in to the secondary storage VM if needed.
    :alt: Updating Console Proxy SSL Certificate
 .. |vr-upgrade.png| image:: /_static/images/vr-upgrade.png
    :alt: Button to upgrade VR to use the new template.
-
-.. include:: /_global.rst

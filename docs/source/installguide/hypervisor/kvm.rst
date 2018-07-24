@@ -532,6 +532,7 @@ of them.
    $ vi /etc/sysconfig/network-scripts/ifcfg-cloudbr0
 
 Now we configure cloudbr0 and include the Management IP of the hypervisor.
+
 .. note::
    The management IP of the hypervisor doesn't have to be in same subnet/VLAN as the
    management network, but its quite common.
@@ -705,6 +706,7 @@ of them.
    $ vi /etc/sysconfig/network-scripts/ifcfg-cloudbr0
 
 Now we configure cloudbr0 and include the Management IP of the hypervisor.
+
 .. note::
    The management IP of the hypervisor doesn't have to be in same subnet/VLAN as the
    management network, but its quite common.
@@ -1020,6 +1022,7 @@ extra ports by executing the following iptable commands:
    $ iptables -I INPUT -p tcp -m tcp --dport 16509 -j ACCEPT
 
 .. sourcecode:: bash
+
    $ iptables -I INPUT -p tcp -m tcp --dport 16514 -j ACCEPT
 
 .. sourcecode:: bash

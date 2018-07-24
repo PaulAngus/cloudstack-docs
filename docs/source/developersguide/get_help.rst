@@ -40,27 +40,16 @@ Documentation Available
 
 The following guides are available:
 
--  `CloudStack Installation Guide`_ - Covers initial installation of CloudStack. It aims to cover in full detail all the
-   steps and requirements to obtain a functioning cloud deployment.
-   At times, this guide mentions additional topics in the context of installation tasks, but does not
-   give full details on every topic. Additional details on many of these topics can be found in the
-   Administration Guide. For example, security groups, firewall and load balancing
-   rules, IP address allocation, and virtual routers are covered in more detail in the Administration
-   Guide.
+-  CloudStack Concepts and Terminology
+-  Quick Installation Guide
+-  Installation Guide
+-  Upgradong CloudStack
+-  Usage Guide
+-  Developers Guide
+-  Plugins Guide
+-  Release Notes
 
--  `CloudStack Administrator's Guide`_ - Discusses how to set up services for the end users of your cloud. Also
-   covers ongoing runtime management and maintenance. This guide discusses topics like domains,
-   accounts, service offerings, projects, guest networks, administrator alerts, virtual machines, storage,
-   and measuring resource usage.
-
--  `Developer's Guide <dev.html>`_ - How to use the API to interact with CloudStack programmatically. Includes
-   links to the complete API Reference.
-
--  `CloudStack Apidocs`_ - API documentation reference. 
-
--  `Release Notes`_ - release specific documentation, including upgrade
-   instructions from prior releases, new features added to CloudStack, API changes, and fixed issues.
-
+All at |documentation_home|
 
 Books
 -----
@@ -74,8 +63,6 @@ Commercial support
 Some companies offer commercial support for Apache CloudStack or their own
 product based on CloudStack.
 
-
-.. include:: /_global.rst
 
 .. |60recipe| image:: /_static/images/60recipe.gif
    :alt: O'Reilly 60 Recipes for Apache CloudStack

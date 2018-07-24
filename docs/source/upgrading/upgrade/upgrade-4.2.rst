@@ -439,5 +439,3 @@ System-VMs and Virtual-Routers
 ------------------------------
 
 .. include:: _sysvm_restart.rst
-
-.. include:: /_global.rst

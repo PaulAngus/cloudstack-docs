@@ -19,8 +19,8 @@
    contain the root `toctree` directive.
 
 
-.. figure:: /_static/images/acslogo.png
-   :align: center
+|menu_acs_logo|
+
 
 Usage Guide
 ===========

@@ -78,7 +78,7 @@ To check the capability of your system, execute the following commands.
         
 
 Important note on MTU size
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When new vxlan interfaces are created, kernel will obtain current MTU size of the physical interface (ethX or the bridge)
 and then create vxlan interface/bridge that are exactly 50 bytes smaller than the MTU on physical interface/bridge.
@@ -87,8 +87,8 @@ have MTU of 1500 bytes, meaning that your physical interface/bridge must have MT
 In order to configure "jumbo frames" you can i.e. make physical interface/bridge with 9000 bytes MTU, then all the vxlan
 interfaces will be created with MTU of 8950 bytes, and then MTU size inside VM can be set to 8950 bytes.
 
-Important note on max number of multicast groups (and thus VXLAN intefaces)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Important note on max number of multicast groups (and thus VXLAN interfaces)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Default value of "net.ipv4.igmp_max_memberships" (cat /proc/sys/net/ipv4/igmp_max_memberships) is "20", which means that host can be joined to max 20 multicast groups (attach max 20 multicast IPs on the host).
 Since all VXLAN (VTEP) interfaces provisioned on host are multicast-based (belong to certain multicast group, and thus has it's own multicast IP that is used as VTEP), this means that you can not provision more than 20 (working) VXLAN interfaces per host.

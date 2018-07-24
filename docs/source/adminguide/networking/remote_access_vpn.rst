@@ -155,4 +155,3 @@ Now, you need to add the VPN users.
 #. Click Add.
 
 #. Repeat the same steps to add the VPN users.
-

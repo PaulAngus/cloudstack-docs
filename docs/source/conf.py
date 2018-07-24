@@ -24,11 +24,13 @@ copyright = '2018, Apache Foundation'
 author = 'Apache CloudStack Project'
 
 # The short X.Y version
-version = ''
+version = '4.11.1'
 # The full version, including alpha/beta/rc tags
-release = '4.12'
+release = '4.11'
 
-
+rst_epilog = """
+.. include:: /_global.rst 
+"""
 # -- General configuration ---------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.

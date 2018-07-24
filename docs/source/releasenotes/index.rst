@@ -18,8 +18,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. figure:: /_static/images/acslogo.png
-   :align: center
+|menu_acs_logo|
+
 
 Release Notes
 =============
@@ -62,6 +62,4 @@ Contents:
    :maxdepth: 2
 
    known_issues   
-  
-   
-.. include:: /_global.rst
+ 

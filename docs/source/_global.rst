@@ -21,6 +21,7 @@
 .. _CloudStack Administrator's Guide: http://docs.cloudstack.apache.org/projects/cloudstack-administration
 .. _CloudStack Apidocs: http://cloudstack.apache.org/docs/api/
 
+.. |documentation_home| replace:: http://docs.cloudstack.apache.org/
 
 .. Latest version systemvm template URL
 .. |sysvm64-url-xen|    replace:: http://download.cloudstack.org/systemvm/4.11/systemvmtemplate-4.11.1-xen.vhd.bz2
@@ -28,3 +29,18 @@
 .. |sysvm64-url-vmware| replace:: http://download.cloudstack.org/systemvm/4.11/systemvmtemplate-4.11.1-vmware.ova
 .. |sysvm64-url-hyperv| replace:: http://download.cloudstack.org/systemvm/4.11/systemvmtemplate-4.11.1-hyperv.vhd.zip
 .. |sysvm64-url-ovm|    replace:: http://download.cloudstack.org/systemvm/4.11/systemvmtemplate-4.11.1-ovm.raw.bz2
+
+.. Version specific: 4.5 systemvm template URL
+.. |acs45-sysvm64-url-xen|    replace:: http://download.cloudstack.org/systemvm/4.5/systemvm64template-4.5-xen.vhd.bz2
+.. |acs45-sysvm64-url-kvm|    replace:: http://download.cloudstack.org/systemvm/4.5/systemvm64template-4.5-kvm.qcow2.bz2
+.. |acs45-sysvm64-url-vmware| replace:: http://download.cloudstack.org/systemvm/4.5/systemvm64template-4.5-vmware.ova
+.. |acs45-sysvm64-url-hyperv| replace:: http://download.cloudstack.org/systemvm/4.5/systemvm64template-4.5-hyperv.vhd.zip
+
+.. Images
+
+
+.. |vpn-icon.png| image:: /_static/images/vpn-icon.png
+.. |sysmanager.png| image:: /_static/images/sysmanager.png
+.. |software-license.png| image:: /_static/images/software-license.png
+.. |change-admin-password.png| image:: /_static/images/change-admin-password.png
+.. |menu_acs_logo| image:: /_static/acslogo.png

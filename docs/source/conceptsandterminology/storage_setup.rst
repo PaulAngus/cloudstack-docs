@@ -13,9 +13,11 @@
    specific language governing permissions and limitations
    under the License.
 
+Introduction
+************
 
 Primary Storage
----------------
+===============
 
 CloudStack is designed to work with a wide variety of commodity and enterprise-rated storage systems.
 CloudStack can also leverage the local disks within the hypervisor hosts if supported by the selected
@@ -34,7 +36,7 @@ The use of the Cluster Logical Volume Manager (CLVM) for KVM is not officially s
 CloudStack.
 
 Secondary Storage
------------------
+=================
 
 CloudStack is designed to work with any scalable secondary storage system. The only requirement is
 that the secondary storage system supports the NFS protocol. For large, multi-zone deployments, S3
@@ -42,6 +44,8 @@ compatible storage is also supported for secondary storage. This allows for seco
 span an entire region, however an NFS staging area must be maintained in each zone as most hypervisors
 are not capable of directly mounting S3 type storage.
 
+Configurations
+**************
 
 Small-Scale Setup
 =================
@@ -69,7 +73,7 @@ be required to support. Care should be taken to consider the IOPS demands of you
 volume of data to be stored and the bandwidth (MB/s) available at the storage interfaces.
 
 Storage Architecture
-====================
+********************
 
 There are many different storage types available which are generally suitable for CloudStack environments.
 Specific use cases should be considered when deciding the best one for your environment and financial
@@ -78,7 +82,7 @@ constraints often make the 'perfect' storage architecture economically unrealist
 Broadly, the architectures of the available primary storage types can be split into 3 types:
 
 Local Storage
--------------
+=============
 
 Local storage works best for pure 'cloud-era' workloads which rarely need to be migrated between storage
 pools and where HA of individual VMs is not required. As SSDs become more mainstream/affordable, local
@@ -89,7 +93,7 @@ of linked clones or any deduplication.
 
 
 'Traditional' node-based Shared Storage
----------------------------------------
+=======================================
 
 Traditional node-based storage are arrays which consist of a controller/controller pair attached to a
 number of disks in shelves.
@@ -107,7 +111,7 @@ to support, and the maximum network bandwidth possible through the controllers.
 
 
 Clustered Shared Storage
-------------------------
+========================
 
 Clustered shared storage arrays are the new generation of storage which do not have a single set of
 interfaces where data enters and exits the array.  Instead it is distributed between all of the active
@@ -126,7 +130,7 @@ of your disk arrays but also the bandwidth available to move that traffic betwee
 the array interfaces.
 
 CloudStack Networking For Storage
----------------------------------
+*********************************
 
 The first thing to understand is the process of provisioning primary storage. When you create a primary
 storage pool for any given cluster, the CloudStack management server tells each hosts’ hypervisor to
@@ -171,14 +175,14 @@ storage.
 
 
 Small-Scale Example Configurations
-----------------------------------
+==================================
 
 In this section we go through a few examples of how to set up storage to
 work properly on a few types of NFS and iSCSI storage systems.
 
 
 Linux NFS on Local Disks and DAS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
 
 This section describes how to configure an NFS export on a standard
 Linux installation. The exact commands might vary depending on the
@@ -261,7 +265,7 @@ operating system version.
 
 
 Linux NFS on iSCSI
-~~~~~~~~~~~~~~~~~~
+------------------
 
 Use the following steps to set up a Linux NFS server export on an iSCSI
 volume. These steps apply to RHEL/CentOS 5 distributions.

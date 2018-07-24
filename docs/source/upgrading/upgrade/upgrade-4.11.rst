@@ -414,6 +414,3 @@ Restart management services
    .. sourcecode:: bash
 
       $ sudo service cloudstack-usage start
-
-
-.. include:: /_global.rst

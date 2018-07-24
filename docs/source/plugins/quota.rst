@@ -1,13 +1,13 @@
 .. Licensed to the Apache Software Foundation (ASF) under one or more
-contributor license agreements.  See the NOTICE file distributed with this work
-for additional information# regarding copyright ownership. The ASF licenses this
-file to you under the Apache License, Version 2.0 (the "License"); you may not
-use this file except in compliance with the License.  You may obtain a copy of
-the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by
-applicable law or agreed to in writing, software distributed under the License
-is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, either express or implied.  See the License for the specific language
-governing permissions and limitations under the License.
+   contributor license agreements.  See the NOTICE file distributed with this work
+   for additional information# regarding copyright ownership. The ASF licenses this
+   file to you under the Apache License, Version 2.0 (the "License"); you may not
+   use this file except in compliance with the License.  You may obtain a copy of
+   the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by
+   applicable law or agreed to in writing, software distributed under the License
+   is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied.  See the License for the specific language
+   governing permissions and limitations under the License.
 
 
 Quota Plugin 
@@ -90,56 +90,56 @@ The following table shows all quota types for which you can specify tariff.
 
 .. cssclass:: table-striped table-bordered table-hover
 
-+------------------+-----------------------------------+-------------------------+
-| Type ID          | Type Name                         | Tariff Description      |
-|                  |                                   |                         |
-+==================+===================================+=========================+
-| 1                | RUNNING\_VM                       | One month of running    |
-|                  |                                   | Compute-Month           |
-+------------------+-----------------------------------+-------------------------+
-| 2                | ALLOCATED\_VM                     | One month of allocated  |
-|                  |                                   | VM                      |
-+------------------+-----------------------------------+-------------------------+
-| 3                | IP\_ADDRESS                       | Quota for a month of    |
-|                  |                                   | allocated IP            |
-+------------------+-----------------------------------+-------------------------+
-| 4                | NETWORK\_BYTES\_SENT              | Quota for 1GB bytes sent|
-+------------------+-----------------------------------+-------------------------+
-| 5                | NETWORK\_BYTES\_RECEIVED          | Quota for 1GB bytes sent|
-+------------------+-----------------------------------+-------------------------+
-| 6                | VOLUME                            | Quota for 1 GB of       |
-|                  |                                   | Volume use for a month  |
-+------------------+-----------------------------------+-------------------------+
-| 7                | TEMPLATE                          | Quota for 1 GB of       |
-|                  |                                   |Template use for a month |
-+------------------+-----------------------------------+-------------------------+
-| 8                | ISO                               | Quota for 1 GB of       |
-|                  |                                   | ISO use for a month     |
-+------------------+-----------------------------------+-------------------------+
-| 9                | SNAPSHOT                          | Quota for 1 GB of       |
-|                  |                                   |SNAPSHOT use for a month |
-+------------------+-----------------------------------+-------------------------+
-| 11               | LOAD\_BALANCER\_POLICY            | Quota for load balancer |
-|                  |                                   | policy month            |
-+------------------+-----------------------------------+-------------------------+
-| 12               | PORT\_FORWARDING\_RULE            |Quota for port forwarding|
-|                  |                                   | policy month            |
-+------------------+-----------------------------------+-------------------------+
-| 13               | NETWORK\_OFFERING                 | Quota for network       |
-|                  |                                   | Offering for a month    |
-+------------------+-----------------------------------+-------------------------+
-| 14               | VPN\_USERS                        | Quota for VPN usage     |
-|                  |                                   |  for a month            |
-+------------------+-----------------------------------+-------------------------+
-| 15               | CPU\_CLOCK\_RATE                  | The tariff for using    |
-|                  |                                   | 1 CPU i100 MHz clock    |
-+------------------+-----------------------------------+-------------------------+
-| 16               | CPU\_NUMBER                       | The quota tariff for    |
-|                  |                                   | using 1 virtual CPU.    |
-+------------------+-----------------------------------+-------------------------+
-| 17               | MEMORY                            | The quota tariff for    |
-|                  |                                   | using 1MB RAM size.     |
-+------------------+-----------------------------------+-------------------------+
++------------------+-----------------------------------+--------------------------+
+| Type ID          | Type Name                         | Tariff Description       |
+|                  |                                   |                          |
++==================+===================================+==========================+
+| 1                | RUNNING\_VM                       | One month of running     |
+|                  |                                   | Compute-Month            |
++------------------+-----------------------------------+--------------------------+
+| 2                | ALLOCATED\_VM                     | One month of allocated   |
+|                  |                                   | VM                       |
++------------------+-----------------------------------+--------------------------+
+| 3                | IP\_ADDRESS                       | Quota for a month of     |
+|                  |                                   | allocated IP             |
++------------------+-----------------------------------+--------------------------+
+| 4                | NETWORK\_BYTES\_SENT              | Quota for 1GB bytes sent |
++------------------+-----------------------------------+--------------------------+
+| 5                | NETWORK\_BYTES\_RECEIVED          | Quota for 1GB bytes sent |
++------------------+-----------------------------------+--------------------------+
+| 6                | VOLUME                            | Quota for 1 GB of        |
+|                  |                                   | Volume use for a month   |
++------------------+-----------------------------------+--------------------------+
+| 7                | TEMPLATE                          | Quota for 1 GB of        |
+|                  |                                   | Template use for a month |
++------------------+-----------------------------------+--------------------------+
+| 8                | ISO                               | Quota for 1 GB of        |
+|                  |                                   | ISO use for a month      |
++------------------+-----------------------------------+--------------------------+
+| 9                | SNAPSHOT                          | Quota for 1 GB of        |
+|                  |                                   | SNAPSHOT use for a month |
++------------------+-----------------------------------+--------------------------+
+| 11               | LOAD\_BALANCER\_POLICY            | Quota for load balancer  |
+|                  |                                   | policy month             |
++------------------+-----------------------------------+--------------------------+
+| 12               | PORT\_FORWARDING\_RULE            | Quota for port forwarding|
+|                  |                                   | policy month             |
++------------------+-----------------------------------+--------------------------+
+| 13               | NETWORK\_OFFERING                 | Quota for network        |
+|                  |                                   | Offering for a month     |
++------------------+-----------------------------------+--------------------------+
+| 14               | VPN\_USERS                        | Quota for VPN usage      |
+|                  |                                   | for a month              |
++------------------+-----------------------------------+--------------------------+
+| 15               | CPU\_CLOCK\_RATE                  | The tariff for using     |
+|                  |                                   | 1 CPU i100 MHz clock     |
++------------------+-----------------------------------+--------------------------+
+| 16               | CPU\_NUMBER                       | The quota tariff for     |
+|                  |                                   | using 1 virtual CPU.     |
++------------------+-----------------------------------+--------------------------+
+| 17               | MEMORY                            | The quota tariff for     |
+|                  |                                   | using 1MB RAM size.      |
++------------------+-----------------------------------+--------------------------+
 
 The quota tariff can be listed using listQuotaTariff API.
 

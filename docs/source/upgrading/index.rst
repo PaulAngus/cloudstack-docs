@@ -18,8 +18,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. figure:: /_static/images/acslogo.png
-   :align: center
+|menu_acs_logo|
+
 
 Upgrading CloudStack
 ====================
@@ -52,6 +52,3 @@ Contents:
 ..   upgrade/upgrade-3.0.x
 ..   upgrade/upgrade-2.2.14
    upgrade/valid_source
-
-   
-.. include:: /_global.rst

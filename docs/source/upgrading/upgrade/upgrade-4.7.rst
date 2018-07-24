@@ -414,4 +414,4 @@ Restart management services
       $ sudo service cloudstack-usage start
 
 
-.. include:: /_global.rst
+

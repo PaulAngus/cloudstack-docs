@@ -18,9 +18,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. figure:: /_static/images/acslogo.png
-   :align: center
-   :target: http://cloudstack.apache.org/
+|menu_acs_logo|
 
 
 CloudStack Concepts and Terminology
@@ -37,7 +35,7 @@ Concepts and Terminolgy
 
    concepts.rst
 
-..architecture:
+.. architecture:
 
 Choosing a Deployment Architecture
 ----------------------------------
@@ -64,6 +62,3 @@ Storage Setup
    :maxdepth: 2
 
    storage_setup
-
-
-.. include:: /_global.rst
