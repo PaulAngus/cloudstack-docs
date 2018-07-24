@@ -22,8 +22,8 @@
 .. figure:: /_static/images/acslogo.png
    :align: center
 
-CloudStack Administration Documentation
-=======================================
+Usage Guide
+===========
 
 This guide is aimed at Administrators of a CloudStack based Cloud
 
@@ -69,6 +69,7 @@ Setting up Networking for Users
    :maxdepth: 4
 
    networking
+   autoscale_without_netscaler
 
 
 Working with Virtual Machines

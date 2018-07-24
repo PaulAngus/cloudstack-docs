@@ -18,11 +18,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Apache CloudStack Release Notes
-===============================
-
 .. figure:: /_static/images/acslogo.png
    :align: center
+
+Release Notes
+=============
+
 
 This document contains information specific to this release of CloudStack, 
 including upgrade instructions from prior releases, new features added to 

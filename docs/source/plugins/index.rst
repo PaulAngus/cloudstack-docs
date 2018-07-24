@@ -23,8 +23,8 @@
    :target: http://cloudstack.apache.org/
 
 
-CloudStack Plugins Guide
-=========================
+Plugins Guide
+=============
 
 
 This is the Apache CloudStack Plugins guide. This section gives information for those wishing to develop CloudStack either contributing to the CloudStack core software or writing external plugins
@@ -35,9 +35,8 @@ This is the Apache CloudStack Plugins guide. This section gives information for 
    cloudian-connector
    nicira-plugin
    nuage-plugin
-   vxlan.rst
+   vxlan
    ovs-plugin
    ipv6
    quota
-   autoscale_without_netscaler.rst
 

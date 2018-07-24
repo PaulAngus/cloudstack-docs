@@ -23,8 +23,8 @@
    :align: center
    :target: http://cloudstack.apache.org/
 
-CloudStack Installation Documentation
-=====================================
+Installation Guide
+==================
 
 This is the Apache CloudStack installation guide
 

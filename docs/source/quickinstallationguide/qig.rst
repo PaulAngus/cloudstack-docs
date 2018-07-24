@@ -14,8 +14,8 @@
    under the License.
 
 
-Quick Installation Guide for CentOS
-===================================
+Quick Installation Guide
+========================
 
 Overview
 --------
