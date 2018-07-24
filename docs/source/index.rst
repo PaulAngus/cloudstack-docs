@@ -26,7 +26,7 @@ Welcome to Apache CloudStack's Documentation
 
 We have a number of guides, starting with a guide to cloudstack's terminology and concepts, moving through some information about possible topologies.  We then have a quick start guide to help you get a very simple cloudstack up and running.  Followed by the full installation guide, an administrator's guide and then further detailed guides on complex configurations.
 
-Information can also be found at CloudStack's wiki https://cwiki.apache.org/confluence/display/CLOUDSTACK/Home  and on cloudstack mailing lists http://cloudstack.apache.org/mailing-lists.html
+Information can also be found at CloudStack's wiki https://cwiki.apache.org/confluence/display/CLOUDSTACK/Home and on cloudstack mailing lists http://cloudstack.apache.org/mailing-lists.html
 
 .. toctree::
    :maxdepth: 3
@@ -35,10 +35,27 @@ Information can also be found at CloudStack's wiki https://cwiki.apache.org/conf
    conceptsandterminology/index
    quickinstallationguide/qig
    installguide/index
+   upgrading/index
    adminguide/index
    developersguide/index
    plugins/index
    releasenotes/index
+
+
+.. toctree::
+   :caption: Other Documentation:
+
+   API Documentation <http://cloudstack.apache.org/api.html>
+   Apache CloudStack Wiki <https://cwiki.apache.org/confluence/display/CLOUDSTACK/Home>
+   Apache CloudStack web site <http://cloudstack.apache.org/>
+   Apache CloudStack Source Code <http://cloudstack.apache.org/downloads.html>
+   Apache CloudStack on GitHub <https://github.com/apache/cloudstack>
+
+   
+
+
+
+
 
 
 Indices and Tables

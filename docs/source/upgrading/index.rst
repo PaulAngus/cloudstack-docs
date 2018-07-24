@@ -21,47 +21,37 @@
 .. figure:: /_static/images/acslogo.png
    :align: center
 
-Release Notes
-=============
+Upgrading CloudStack
+====================
 
 
-This document contains information specific to this release of CloudStack, 
-including upgrade instructions from prior releases, new features added to 
-CloudStack, API changes, and issues fixed in the release. For installation 
-instructions, please see the `CloudStack Installation Guide`_. For usage and 
-administration instructions, please see the `CloudStack Administrator's Guide`_.
+This document contains the instructions for upgrading CloudStack from prior releases, to the current 
+release.  Please read through all sections carefully before starting.
+
+.. note::
+   For information on the API changes and issues fixed in this release, please see the Release Notes section of the documentation
 
 
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   about
+   upgrade/upgrade-4.11
+   upgrade/upgrade-4.10
+   upgrade/upgrade-4.9
+   upgrade/upgrade-4.8
+   upgrade/upgrade-4.7
+   upgrade/upgrade-4.6
+   upgrade/upgrade-4.5
+   upgrade/upgrade-4.4
+   upgrade/upgrade-4.3
+..   upgrade/upgrade-4.2
+..   upgrade/upgrade-4.1
+..   upgrade/upgrade-4.0
+..   upgrade/upgrade-3.0.x
+..   upgrade/upgrade-2.2.14
+   upgrade/valid_source
 
-
-.. toctree::
-   :maxdepth: 2
-
-   fixed_issues
-
-
-.. toctree::
-   :maxdepth: 2
-
-   compat
-   
-
-.. toctree::
-   :maxdepth: 2
-
-   api-changes
-
-
-.. toctree::
-   :maxdepth: 2
-
-   known_issues   
-  
    
 .. include:: /_global.rst
