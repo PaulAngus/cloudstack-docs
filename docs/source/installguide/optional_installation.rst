@@ -153,7 +153,7 @@ steps are a guide to implementing MySQL replication.
 
       # mysql -u root
       mysql> create user 'cloud-repl'@'172.16.1.%' identified by 'password';
-      mysql> grant replication slave on *.* TO 'cloud-repl'@'172.16.1.%';
+      mysql> grant replication slave on \*.\* TO 'cloud-repl'@'172.16.1.%';
       mysql> flush privileges;
       mysql> flush tables with read lock;
 
