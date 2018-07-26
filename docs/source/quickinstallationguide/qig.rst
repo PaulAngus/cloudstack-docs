@@ -478,15 +478,15 @@ means that we have already performed many of the prerequisite steps when
 setting up the management server, but we will list them here for clarity. 
 Those steps are:
 
-#. :ref:`conf-network`
+:ref:`conf-network`
 
-#. :ref:`conf-hostname`
+:ref:`conf-hostname`
 
-#. :ref:`conf-selinux`
+:ref:`conf-selinux`
 
-#. :ref:`conf-ntp`
+:ref:`conf-ntp`
 
-#. :ref:`qigconf-pkg-repo`
+:ref:`qigconf-pkg-repo`
 
 You shouldn't need to do that for the management server, of course, but any 
 additional hosts will need for you to complete the above steps.

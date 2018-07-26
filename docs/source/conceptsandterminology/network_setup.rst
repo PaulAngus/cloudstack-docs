@@ -257,7 +257,7 @@ Hardware Firewall
 All deployments should have a firewall protecting the management server;
 see Generic Firewall Provisions. Optionally, some deployments may also
 have a Juniper SRX firewall that will be the default gateway for the
-guest networks; see `“External Guest Firewall Integration for Juniper SRX (Optional)” <#external-guest-firewall-integration-for-juniper-srx-optional>`_.
+guest networks; see :ref:`external-guest-firewall-integration-for-juniper-srx-optional`
 
 
 Generic Firewall Provisions
@@ -277,6 +277,7 @@ the firewall. Firewall rules and policies need not change as users are
 provisioned into the cloud. Any brand of hardware firewall that supports
 NAT and site-to-site VPN can be used.
 
+.. _external-guest-firewall-integration-for-juniper-srx-optional:
 
 External Guest Firewall Integration for Juniper SRX (Optional)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -510,9 +511,7 @@ Prerequisites
    profile, which needs to be provided while adding the ASA appliance to
    CloudStack.
 
-   For information on configuration, see 
-   `“Configuring a vSphere Cluster with Nexus 1000v Virtual Switch” 
-   <hypervisor_installation.html#configuring-a-vsphere-cluster-with-nexus-1000v-virtual-switch>`_.
+   For information on configuration, see :ref:`configuring-a-vsphere-cluster-with-nexus-1000v-virtual-switch`.
 
 #. Deploy and configure Cisco VNMC.
 
@@ -529,9 +528,7 @@ Prerequisites
 
 #. Create Inside and Outside port profiles in Cisco Nexus 1000v dvSwitch.
 
-   For more information, see 
-   `“Configuring a vSphere Cluster with Nexus 1000v Virtual Switch” 
-   <hypervisor_installation.html#configuring-a-vsphere-cluster-with-nexus-1000v-virtual-switch>`_.
+   For more information, see :ref:`configuring-a-vsphere-cluster-with-nexus-1000v-virtual-switch`.
 
 #. Deploy and Cisco ASA 1000v appliance.
 
@@ -578,13 +575,12 @@ Using Cisco ASA 1000v Services
 
 #. Add a ASA 1000v instance.
 
-   See `“Adding an ASA 1000v Instance” <#adding-an-asa-1000v-instance>`_.
+   See :ref:`adding-an-asa-1000v-instance`.
 
 #. Create a Network Offering and use Cisco VNMC as the service provider
    for desired services.
 
-   See `“Creating a Network Offering Using Cisco ASA 1000v” 
-   <#creating-a-network-offering-using-cisco-asa-1000v>`_.
+   See :ref:`creating-a-network-offering-using-cisco-asa-1000v`.
 
 #. Create an Isolated Guest Network by using the network offering you
    just created.
@@ -623,6 +619,7 @@ Adding a VNMC Instance
 
 #. Click OK.
 
+.. adding-an-asa-1000v-instance:
 
 Adding an ASA 1000v Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -661,6 +658,7 @@ Adding an ASA 1000v Instance
 
 #. Click OK.
 
+.. _creating-a-network-offering-using-cisco-asa-1000v:
 
 Creating a Network Offering Using Cisco ASA 1000v
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

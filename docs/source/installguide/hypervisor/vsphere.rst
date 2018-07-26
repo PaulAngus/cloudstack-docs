@@ -359,6 +359,7 @@ Configure NIC Bonding for vSphere
 NIC bonding on vSphere hosts may be done according to the vSphere
 installation guide.
 
+.. _configuring-a-vsphere-cluster-with-nexus-1000v-virtual-switch:
 
 Configuring a vSphere Cluster with Nexus 1000v Virtual Switch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
