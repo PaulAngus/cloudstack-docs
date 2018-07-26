@@ -577,8 +577,7 @@ during the zone configuration on CloudStack. These Ethernet port profile
 names are later specified as VMware Traffic Labels for different traffic
 types when configuring physical networks during the zone configuration.
 For more information on configuring physical networks, see
-`"Configuring a vSphere Cluster with Nexus 1000v Virtual Switch" 
-<#configuring-a-vsphere-cluster-with-nexus-1000v-virtual-switch>`_.
+:ref:`configuring-a-vsphere-cluster-with-nexus-1000v-virtual-switch`.
 
 
 Adding VLAN Ranges
