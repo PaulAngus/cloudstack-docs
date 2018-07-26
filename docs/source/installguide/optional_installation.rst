@@ -1,4 +1,4 @@
-.. Licensed to the Apache Software Foundation (ASF) under one
+﻿.. Licensed to the Apache Software Foundation (ASF) under one
    or more contributor license agreements.  See the NOTICE file
    distributed with this work for additional information#
    regarding copyright ownership.  The ASF licenses this file
@@ -149,11 +149,11 @@ steps are a guide to implementing MySQL replication.
    will use the "cloud-repl" user with the password "password". This
    assumes that master and slave run on the 172.16.1.0/24 network.
 
-   .. parsed-literal::
+   .. sourcecode: bash
 
       # mysql -u root
       mysql> create user 'cloud-repl'@'172.16.1.%' identified by 'password';
-      mysql> grant replication slave on \*.\* TO 'cloud-repl'@'172.16.1.%';
+      mysql> grant replication slave on *.* TO 'cloud-repl'@'172.16.1.%';
       mysql> flush privileges;
       mysql> flush tables with read lock;
 
