@@ -15,12 +15,12 @@
 
 
 
-Issues Fixed in |version|
+Issues Fixed in |release|
 =========================
 
 Apache CloudStack uses `Jira <https://issues.apache.org/jira/browse/CLOUDSTACK>`_ 
 to track its issues and `Github <https://github.com/apache/cloudstack/pulls>`_ for 
-pull requests. All new features and bugs for |release| have been merged through
+pull requests. All new features and bugs for |version| have been merged through
 Github pull requests.  A subset of these changes are tracked in Jira, which have a 
 standard naming convention of "CLOUDSTACK-NNNN" where "NNNN" is the issue number.
 

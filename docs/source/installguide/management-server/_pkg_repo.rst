@@ -49,11 +49,11 @@ To add the CloudStack repository, create
 ``/etc/yum.repos.d/cloudstack.repo`` and insert the following
 information.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    [cloudstack]
    name=cloudstack
-   baseurl=http://download.cloudstack.org/centos/$releasever/4.11/
+   baseurl=http://download.cloudstack.org/centos/$releasever/|version|/
    enabled=1
    gpgcheck=0
 
@@ -72,19 +72,19 @@ Use your preferred editor and open (or create)
 ``/etc/apt/sources.list.d/cloudstack.list``. Add the community provided
 repository to the file:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
-   deb http://cloudstack.apt-get.eu/ubuntu trusty 4.11
+   deb http://download.cloudstack.org/ubuntu trusty |version|
 
 We now have to add the public key to the trusted keys.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
-   sudo wget -O - http://cloudstack.apt-get.eu/release.asc|apt-key add -
+   sudo wget -O - http://download.cloudstack.org/release.asc|apt-key add -
 
 Now update your local apt cache.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    sudo apt-get update
 

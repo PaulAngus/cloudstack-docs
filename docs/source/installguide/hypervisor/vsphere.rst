@@ -347,7 +347,7 @@ with VMware-based VMs. The default additional port range is 59000-60000.
 To extend the port range, log in to the VMware ESX service console on
 each host and run the following commands:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    esxcfg-firewall -o 59000-60000,tcp,in,vncextras
    esxcfg-firewall -o 59000-60000,tcp,out,vncextras
@@ -591,7 +591,7 @@ vlan<range> command to add the VLAN ranges to the port profile.
 
 For example:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    switchport trunk allowed vlan 1,140-147,196-203
 
@@ -609,14 +609,14 @@ For example:
 If you want the VLAN 200 to be used on the switch, run the following
 command:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    vlan 200
 
 If you want the VLAN range 1350-1750 to be used on the switch, run the
 following command:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    vlan 1350-1750
 
@@ -974,8 +974,7 @@ Applying Hotfixes to a VMware vSphere Host
 
    #. Log in to the CloudStack UI as root.
 
-      See `“Log In to the UI” 
-      <http://docs.cloudstack.apache.org/projects/cloudstack-administration/en/latest/ui.html#log-in-to-the-ui>`_.
+      See :ref:`log-in-to-ui`
 
    #. Navigate to the VMware cluster, click Actions, and select
       Unmanage.

@@ -86,13 +86,13 @@ the following whether in HTTP or HTTPS:
 
 A sample API GET request looks like the following:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    http://localhost:8080/client/api?command=deployVirtualMachine&serviceOfferingId=1&diskOfferingId=1&templateId=2&zoneId=4&apiKey=miVr6X7u6bN_sdahOBpjNejPgEsT35eXq-jB8CG20YI3yaxXcgpyuaIRmFI_EJTVwZ0nUkkJbPmY3y2bciKwFQ&signature=Lxx1DM40AjcXU%2FcaiK8RAP0O1hU%3D
 
 Or in a more readable format:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    1. http://localhost:8080/client/api
    2. ?command=deployVirtualMachine
@@ -134,7 +134,7 @@ process.
 
 To show how to sign a request, we will re-use the previous example.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    http://http://localhost:8080/client/api?command=deployVirtualMachine&serviceOfferingId=1&diskOfferingId=1&templateId=2&zoneId=4&apiKey=miVr6X7u6bN_sdahOBpjNejPgEsT35eXq-jB8CG20YI3yaxXcgpyuaIRmFI_EJTVwZ0nUkkJbPmY3y2bciKwFQ&signature=Lxx1DM40AjcXU%2FcaiK8RAP0O1hU%3D
 
@@ -142,14 +142,14 @@ Breaking this down, we have several distinct parts to this URL.
 
 -  Base URL: This is the base URL to the CloudStack Management Server.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       http://localhost:8080
 
 -  API Path: This is the path to the API Servlet that processes the
    incoming requests.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       /client/api?
 
@@ -169,7 +169,7 @@ Breaking this down, we have several distinct parts to this URL.
    generated using a combination of the user’s Secret Key and the HMAC
    SHA-1 hashing algorithm.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       &signature=Lxx1DM40AjcXU%2FcaiK8RAP0O1hU%3D
 
@@ -188,7 +188,7 @@ To generate the signature.
    the field for each field-value pair. The result of this step would
    look like the following.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       apikey=mivr6x7u6bn_sdahobpjnejpgest35exq-jb8cg20yi3yaxxcgpyuairmfi_ejtvwz0nukkjbpmy3y2bcikwfq&command=deployvirtualmachine&diskofferingid=1&serviceofferingid=1&templateid=2&zoneid=4
 
@@ -202,7 +202,7 @@ To generate the signature.
    By reconstructing the final URL in the format Base URL+API
    Path+Command String+Signature, the final URL should look like:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       http://localhost:8080/client/api?command=deployVirtualMachine&serviceOfferingId=1&diskOfferingId=1&templateId=2&zoneId=4&apiKey=miVr6X7u6bN_sdahOBpjNejPgEsT35eXq-jB8CG20YI3yaxXcgpyuaIRmFI_EJTVwZ0nUkkJbPmY3y2bciKwFQ&signature=Lxx1DM40AjcXU%2FcaiK8RAP0O1hU%3D
 
@@ -215,7 +215,7 @@ step interactive session using Python.
 
 First import the required modules:
 
-.. sourcecode:: bash
+.. parsed-literal::
    
    $python
    Python 2.7.3 (default, Nov 17 2012, 19:54:34) 
@@ -231,7 +231,7 @@ First import the required modules:
 Define the endpoint of the Cloud, the command that you want to execute
 and the keys of the user.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    >>> baseurl='http://localhost:8080/client/api?'
    >>> request={}
@@ -243,7 +243,7 @@ and the keys of the user.
 
 Build the request string:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    >>> request_str='&'.join(['='.join([k,urllib.quote_plus(request[k])]) for k in request.keys()])
    >>> request_str
@@ -253,7 +253,7 @@ Build the request string:
 Compute the signature with hmac, do a 64 bit encoding and a url
 encoding:
 
-.. sourcecode:: bash
+.. parsed-literal::
       
    >>> sig_str='&'.join(['='.join([k.lower(),urllib.quote_plus(request[k].lower().replace('+','%20'))])for k in sorted(request.iterkeys())]) 
    >>> sig_str 'apikey=plgwjfzk4gys3momtvmjuvg-x-jlwlnfauj9gabbbf9edm-kaymmailqzzq1elzlyq_u38zcm0bewzgudp66mg&command=listusers&response=json'
@@ -274,7 +274,7 @@ encoding:
 
 Finally, build the entire string and do an http GET:
 
-.. sourcecode:: bash
+.. parsed-literal::
       
    >>> req=baseurl+request_str+'&signature='+sig
    >>> req
@@ -305,13 +305,13 @@ To enable this feature, add the following parameters to the API request:
 
 For example:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    expires=2011-10-10T12:00:00+0530
 
 A sample API request with expiration is given below:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    http://<IPAddress>:8080/client/api?command=listZones&signatureVersion=3&expires=2011-10-10T12:00:00+0530&apiKey=miVr6X7u6bN_sdahOBpjNejPgEsT35eXq-jB8CG20YI3yaxXcgpyuaIRmFI_EJTVwZ0nUkkJbPmY3y2bciKwFQ&signature=Lxx1DM40AjcXU%2FcaiK8RAP0O1hU%3D
 
@@ -389,7 +389,7 @@ will be returned as a placeholder XML element.
 
 Sample XML Response:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    <listipaddressesresponse> 
       <allocatedipaddress>
@@ -403,7 +403,7 @@ Sample XML Response:
 
 Sample JSON Response:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    { "listipaddressesresponse" : 
      { "allocatedipaddress" :
@@ -633,14 +633,14 @@ Example
 The following shows an example of using an asynchronous command. Assume
 the API command:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    command=deployVirtualMachine&zoneId=1&serviceOfferingId=1&diskOfferingId=1&templateId=1
 
 CloudStack will immediately return a job ID and any other additional
 data.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    <deployvirtualmachineresponse> 
       <jobid>1</jobid>
@@ -650,7 +650,7 @@ data.
 Using the job ID, you can periodically poll for the results by using the
 queryAsyncJobResult command.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    command=queryAsyncJobResult&jobId=1
 
@@ -658,7 +658,7 @@ Three possible results could come from this query.
 
 Job is still pending:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    <queryasyncjobresult> 
       <jobid>1</jobid>
@@ -668,7 +668,7 @@ Job is still pending:
 
 Job has succeeded:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    <queryasyncjobresultresponse cloud-stack-version="3.0.1.6">
       <jobid>1</jobid>
@@ -722,7 +722,7 @@ Job has succeeded:
 
 Job has failed:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    <queryasyncjobresult>
       <jobid>1</jobid> 
@@ -1285,6 +1285,7 @@ Event Types
 |                   | UCS.DISASSOCIATEPROFILE                                |
 +-------------------+--------------------------------------------------------+
 
+.. _time-zones:
 
 Time Zones
 ----------

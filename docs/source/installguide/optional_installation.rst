@@ -54,19 +54,19 @@ Steps to Install the Usage Server
 
    On RHEL/CentOS systems, use:
    
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # yum install cloudstack-usage
 
    On Debian/Ubuntu systems, use:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
       
       # apt-get install cloudstack-usage
 
 #. Once installed, start the Usage Server with the following command.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # service cloudstack-usage start
 
@@ -74,17 +74,17 @@ Steps to Install the Usage Server
 
    On RHEL/CentOS systems, use:
    
-   .. sourcecode:: bash
+   .. parsed-literal::
    
       # chkconfig cloudstack-usage on
       
    On Debian/Ubuntu systems, use:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # update-rc.d cloudstack-usage defaults
 
-The `Administration Guide <http://docs.cloudstack.apache.org/projects/cloudstack-administration/en/latest/usage.html>`_ discusses further configuration of the Usage
+:ref:`working-with-usage` discusses further configuration of the Usage
 Server.
 
 
@@ -123,7 +123,7 @@ steps are a guide to implementing MySQL replication.
 #. Edit my.cnf on the master and add the following in the [mysqld]
    section below datadir.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       log_bin=mysql-bin
       server_id=1
@@ -135,13 +135,13 @@ steps are a guide to implementing MySQL replication.
 
 #. Restart the MySQL service. On RHEL/CentOS systems, use:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # service mysqld restart
 
    On Debian/Ubuntu systems, use:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # service mysql restart
 
@@ -149,7 +149,7 @@ steps are a guide to implementing MySQL replication.
    will use the "cloud-repl" user with the password "password". This
    assumes that master and slave run on the 172.16.1.0/24 network.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # mysql -u root
       mysql> create user 'cloud-repl'@'172.16.1.%' identified by 'password';
@@ -163,7 +163,7 @@ steps are a guide to implementing MySQL replication.
 
 #. Retrieve the current position of the database.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # mysql -u root
       mysql> show master status;
@@ -180,14 +180,14 @@ steps are a guide to implementing MySQL replication.
 #. Complete the master setup. Returning to your first session on the
    master, release the locks and exit MySQL.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       mysql> unlock tables;
 
 #. Install and configure the slave. On the slave server, run the
    following commands.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # yum install mysql-server
       # chkconfig mysqld on
@@ -195,7 +195,7 @@ steps are a guide to implementing MySQL replication.
 #. Edit my.cnf and add the following lines in the [mysqld] section below
    datadir.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       server_id=2
       innodb_rollback_on_timeout=1
@@ -203,13 +203,13 @@ steps are a guide to implementing MySQL replication.
 
 #. Restart MySQL. Use "mysqld" on RHEL/CentOS systems:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # service mysqld restart
 
    On Ubuntu/Debian systems use "mysql."
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # service mysql restart
 
@@ -217,7 +217,7 @@ steps are a guide to implementing MySQL replication.
    Replace the IP address, password, log file, and position with the
    values you have used in the previous steps.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       mysql> change master to
           -> master_host='172.16.1.217',
@@ -228,7 +228,7 @@ steps are a guide to implementing MySQL replication.
 
 #. Then start replication on the slave.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       mysql> start slave;
 
@@ -262,7 +262,7 @@ administrator. In the event of a database failure you should:
 
 #. Restart the Management Servers:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # service cloudstack-management start
 
@@ -342,7 +342,7 @@ prior to using it.
 #. If you did not already do so when you set the configuration parameter
    in step 1, restart the Management Server.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # service cloudstack-management restart
 
@@ -367,7 +367,7 @@ integration port on which you can make unauthenticated calls. In Global
 Settings set the port to 8096 and subsequently call the
 *updateConfiguration* method. The following urls shows you how:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    http://localhost:8096/client/api?command=updateConfiguration&name=enable.ec2.api&value=true
    http://localhost:8096/client/api?command=updateConfiguration&name=enable.ec2.api&value=true
@@ -446,7 +446,7 @@ To use the EC2 command-line tools, the user must perform these steps:
    CloudStack management server and port. In a bash shell do the
    following.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ export EC2_CERT=/path/to/cert.pem
    $ export EC2_PRIVATE_KEY=/path/to/private_key.pem
@@ -465,19 +465,19 @@ command-line parameters to any CloudStack-supported EC2 command:
 
 Specifies a connection timeout (in seconds)
 
-.. sourcecode:: bash
+.. parsed-literal::
                                
    --connection-timeout TIMEOUT
 
 Specifies a request timeout (in seconds)
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    --request-timeout TIMEOUT
 
 Example:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    ec2-run-instances 2 –z us-test1 –n 1-3 --connection-timeout 120 --request-timeout 120
 

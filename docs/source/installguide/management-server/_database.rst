@@ -37,11 +37,11 @@ MySQL. See :ref:`install-database-on-separate-node`.
 
 #. Install MySQL from the package repository of your distribution:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       yum install mysql-server
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       sudo apt-get install mysql-server
 
@@ -55,7 +55,7 @@ MySQL. See :ref:`install-database-on-separate-node`.
    Servers you are deploying. This example assumes one Management
    Server.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       innodb_rollback_on_timeout=1
       innodb_lock_wait_timeout=600
@@ -75,13 +75,13 @@ MySQL. See :ref:`install-database-on-separate-node`.
    On RHEL/CentOS, MySQL doesn't automatically start after installation.
    Start it manually.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       service mysqld start
 
    On Ubuntu, restart MySQL.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       sudo service mysql restart
 
@@ -95,7 +95,7 @@ MySQL. See :ref:`install-database-on-separate-node`.
    Run the following command to secure your installation. You can answer "Y" 
    to all questions.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       mysql_secure_installation
 
@@ -111,7 +111,7 @@ MySQL. See :ref:`install-database-on-separate-node`.
       In RHEL or CentOS, SELinux is installed and enabled by default.
       You can verify this with:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          rpm -qa | grep selinux
 
@@ -121,33 +121,33 @@ MySQL. See :ref:`install-database-on-separate-node`.
 
       In RHEL or CentOS:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          vi /etc/selinux/config
 
       Change the following line
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          SELINUX=enforcing
 
       to this:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          SELINUX=permissive
 
    #. Set SELinux to permissive starting immediately, without requiring
       a system reboot.
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          setenforce permissive
 
 #. Set up the database. The following command creates the "cloud" user
    on the database.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       cloudstack-setup-databases cloud:<dbpassword>@localhost \
       --deploy-as=root:<password> \
@@ -199,7 +199,7 @@ MySQL. See :ref:`install-database-on-separate-node`.
 #. If you are running the KVM hypervisor on the same machine with the
    Management Server, edit /etc/sudoers and add the following line:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       Defaults:cloud !requiretty
 
@@ -207,7 +207,7 @@ MySQL. See :ref:`install-database-on-separate-node`.
    for the Management Server. This command will set up iptables,
    sudoers, and start the Management Server.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       cloudstack-setup-management
 
@@ -237,11 +237,11 @@ same node for MySQL. See `â€œInstall the Database on the Management Server Nodeâ
 
 #. Install MySQL from the package repository from your distribution:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       yum install mysql-server
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       sudo apt-get install mysql-server
 
@@ -257,7 +257,7 @@ same node for MySQL. See `â€œInstall the Database on the Management Server Nodeâ
       add these directives there. Don't forget to add [mysqld] on the first 
       line of the file.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       innodb_rollback_on_timeout=1
       innodb_lock_wait_timeout=600
@@ -271,13 +271,13 @@ same node for MySQL. See `â€œInstall the Database on the Management Server Nodeâ
    On RHEL/CentOS, MySQL doesn't automatically start after installation.
    Start it manually.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       service mysqld start
 
    On Ubuntu, restart MySQL.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       sudo service mysql restart
 
@@ -290,7 +290,7 @@ same node for MySQL. See `â€œInstall the Database on the Management Server Nodeâ
       can answer "Y" to all questions except "Disallow root login remotely?". 
       Remote root login is required to set up the databases.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       mysql_secure_installation
 
@@ -300,7 +300,7 @@ same node for MySQL. See `â€œInstall the Database on the Management Server Nodeâ
    On Ubuntu, UFW is the default firewall. Open the port with this
    command:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       ufw allow mysql
 
@@ -309,13 +309,13 @@ same node for MySQL. See `â€œInstall the Database on the Management Server Nodeâ
    #. Edit the /etc/sysconfig/iptables file and add the following line
       at the beginning of the INPUT chain.
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          -A INPUT -p tcp --dport 3306 -j ACCEPT
 
    #. Now reload the iptables rules.
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          service iptables restart
 
@@ -352,7 +352,7 @@ same node for MySQL. See `â€œInstall the Database on the Management Server Nodeâ
       cluster management server node IP. If not specified, the local IP
       address will be used.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       cloudstack-setup-databases cloud:<dbpassword>@<ip address mysql server> \
       --deploy-as=root:<password> \
@@ -368,7 +368,7 @@ same node for MySQL. See `â€œInstall the Database on the Management Server Nodeâ
    for the Management Server. This command will set up iptables,
    sudoers, and start the Management Server.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       cloudstack-setup-management
 

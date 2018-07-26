@@ -16,6 +16,8 @@
 Introduction
 ************
 
+.. _about-primary-storage:
+
 Primary Storage
 ===============
 
@@ -34,6 +36,8 @@ Local Disk     Supported                       Supported           Supported
 
 The use of the Cluster Logical Volume Manager (CLVM) for KVM is not officially supported with
 CloudStack.
+
+.. _about-secondary-storage:
 
 Secondary Storage
 =================
@@ -205,7 +209,7 @@ operating system version.
 #. After /export directory is created, run the following command to
    configure it as an NFS export.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # echo "/export <CIDR>(rw,async,no_root_squash,no_subtree_check)" >> /etc/exports
 
@@ -216,7 +220,7 @@ operating system version.
 
  The following is an example with separate CIDRs:
 
- .. sourcecode:: bash
+ .. parsed-literal::
 
       /export 192.168.1.0/24(rw,async,no_root_squash,no_subtree_check) 10.50.1.0/24(rw,async,no_root_squash,no_subtree_check)
 
@@ -224,13 +228,13 @@ operating system version.
 
 6. Run the following command to enable NFS service.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # chkconfig nfs on
 
 #. Edit the /etc/sysconfig/nfs file and uncomment the following lines.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       LOCKD_TCPPORT=32803
       LOCKD_UDPPORT=32769
@@ -242,7 +246,7 @@ operating system version.
 #. Edit the /etc/sysconfig/iptables file and add the following lines at
    the beginning of the INPUT chain.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       -A INPUT -m state --state NEW -p udp --dport 111 -j ACCEPT
       -A INPUT -m state --state NEW -p tcp --dport 111 -j ACCEPT
@@ -272,7 +276,7 @@ volume. These steps apply to RHEL/CentOS 5 distributions.
 
 #. Install iscsiadm.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # yum install iscsi-initiator-utils
       # service iscsi start
@@ -281,38 +285,38 @@ volume. These steps apply to RHEL/CentOS 5 distributions.
 
 #. Discover the iSCSI target.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # iscsiadm -m discovery -t st -p <iSCSI Server IP address>:3260
 
    For example:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # iscsiadm -m discovery -t st -p 172.23.10.240:3260 172.23.10.240:3260,1 iqn.2001-05.com.equallogic:0-8a0906-83bcb3401-16e0002fd0a46f3d-rhel5-test
 
 #. Log in.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # iscsiadm -m node -T <Complete Target Name> -l -p <Group IP>:3260
 
    For example:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # iscsiadm -m node -l -T iqn.2001-05.com.equallogic:83bcb3401-16e0002fd0a46f3d-rhel5-test -p 172.23.10.240:3260
 
 #. Discover the SCSI disk. For example:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # iscsiadm -m session -P3 | grep Attached
       Attached scsi disk sdb State: running
 
 #. Format the disk as ext3 and mount the volume.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # mkfs.ext3 /dev/sdb
       # mkdir -p /export
@@ -320,7 +324,7 @@ volume. These steps apply to RHEL/CentOS 5 distributions.
 
 #. Add the disk to /etc/fstab to make sure it gets mounted on boot.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       /dev/sdb /export ext3 _netdev 0 0
 
@@ -339,7 +343,7 @@ Now you can set up /export as an NFS share.
 
    The following is an example with separate CIDRs:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       /export 192.168.1.0/24(rw,async,no_root_squash,no_subtree_check) 10.50.1.0/24(rw,async,no_root_squash,no_subtree_check)
 

@@ -14,7 +14,7 @@
    under the License.
 
 
-API Changes Introduced in |version|
+API Changes Introduced in |release|
 ===================================
 
 For the complete list of API commands and params consult the `CloudStack Apidocs`_.

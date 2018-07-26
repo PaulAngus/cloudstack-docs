@@ -19,6 +19,8 @@
 Configuring a Virtual Private Cloud
 -----------------------------------
 
+.. _about-vpc:
+
 About Virtual Private Clouds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -985,7 +987,7 @@ follows:
       Private Cloud-enabled. A Virtual Private Cloud (VPC) is a private,
       isolated part of CloudStack. A VPC can have its own virtual
       network topology that resembles a traditional physical network.
-      For more information on VPCs, see `"About Virtual Private Clouds" <#about-virtual-private-clouds>`_.
+      For more information on VPCs, see :ref: `about-vpc`.
 
    -  **Specify VLAN**: (Isolated guest networks only) Indicate whether
       a VLAN should be specified when this offering is used.

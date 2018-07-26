@@ -29,6 +29,7 @@ When the Management Server is down, no new VMs can be created, and the
 end user and admin UI, API, dynamic load distribution, and HA will cease
 to work.
 
+.. _management-server-load-balancing:
 
 Management Server Load Balancing
 --------------------------------

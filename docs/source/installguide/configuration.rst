@@ -20,8 +20,7 @@ Configuring your CloudStack Installation
 
 This section tells how to add regions, zones, pods, clusters, hosts,
 storage, and networks to your cloud. If you are unfamiliar with these
-entities, please begin by looking through `*Cloud Infrastructure Concepts* 
-<http://docs.cloudstack.apache.org/en/latest/concepts.html#cloud-infrastructure-concepts>`_.
+entities, please begin by looking through :ref:`infrastructure-overview`
 
 
 Overview of Provisioning Steps
@@ -29,8 +28,7 @@ Overview of Provisioning Steps
 
 After the Management Server is installed and running, you can add the
 compute resources for it to manage. For an overview of how a CloudStack
-cloud infrastructure is organized, see `“Cloud Infrastructure Overview” 
-<http://docs.cloudstack.apache.org/en/latest/concepts.html#cloud-infrastructure-overview>`_.
+cloud infrastructure is organized, see :ref:`infrastructure-overview`
 
 To provision the cloud infrastructure, or to scale it up at any time,
 follow these procedures:
@@ -63,8 +61,7 @@ Adding Regions (optional)
 -------------------------
 
 Grouping your cloud resources into geographic regions is an optional
-step when provisioning the cloud. For an overview of regions, see
-`“About Regions” <http://docs.cloudstack.apache.org/en/latest/concepts.html#about-regions>`_.
+step when provisioning the cloud. For an overview of regions, see :ref:`about-regions`
 
 
 The First Region: The Default Region
@@ -92,7 +89,7 @@ region.
    for the new region. The default region is automatically assigned a
    region ID of 1, so your first additional region might be region 2.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # cloudstack-setup-databases cloud:<dbpassword>@localhost --deploy-as=root:<password> -e <encryption_type> -m <management_server_key> -k <database_key> -r <region_id>
 
@@ -131,25 +128,25 @@ region.
 
    #. First, run this command to copy the contents of the database:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          # mysqldump -u root -p<mysql_password> -h <region1_db_host> cloud account user domain > region1.sql
 
    #. Then run this command to put the data onto the region 2 database:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          # mysql -u root -p<mysql_password> -h <region2_db_host> cloud < region1.sql
 
 #. Remove project accounts. Run these commands on the region 2 database:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
          # mysql> delete from account where type = 5;
 
 #. Set the default zone as null:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
          # mysql> update account set default_zone_id = null;
 
@@ -166,7 +163,7 @@ repeat certain steps additional times for each additional region:
 #. Install CloudStack in each additional region. Set the region ID for
    each region during the database setup step.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       cloudstack-setup-databases cloud:<dbpassword>@localhost --deploy-as=root:<password> -e <encryption_type> -m <management_server_key> -k <database_key> -r <region_id>
 
@@ -206,26 +203,26 @@ repeat certain steps additional times for each additional region:
 
    #. First, run this command to copy the contents of the database:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          # mysqldump -u root -p<mysql_password> -h <region1_db_host> cloud account user domain > region1.sql
 
    #. Then run this command to put the data onto the new region's
       database. For example, for region 3:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          # mysql -u root -p<mysql_password> -h <region3_db_host> cloud < region1.sql
 
 #. Remove project accounts. Run these commands on the region 3 database:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       mysql> delete from account where type = 5;
 
 #. Set the default zone as null:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       mysql> update account set default_zone_id = null;
 
@@ -259,7 +256,7 @@ When you add a new zone, you will be prompted to configure the zone’s
 physical network and add the first pod, cluster, host, primary storage,
 and secondary storage.
 
-#. Log in to the CloudStack UI as the root administrator. See `“Log In to the UI” <http://docs.cloudstack.apache.org/projects/cloudstack-administration/en/latest/ui.html#log-in-to-the-ui>`_.
+#. Log in to the CloudStack UI as the root administrator. See :ref:`log-in-to-ui`.
 
 #. In the left navigation, choose Infrastructure.
 
@@ -404,8 +401,7 @@ Basic Zone Configuration
       to guest VMs.
 
 #. In a new zone, CloudStack adds the first pod for you. You can always
-   add more pods later. For an overview of what a pod is, see
-   `“About Pods” <http://docs.cloudstack.apache.org/en/latest/concepts.html?highlight=about%20pods#about-pods>`_.
+   add more pods later. For an overview of what a pod is, see :ref:`about-pods`
 
    To configure the first pod, enter the following, then click Next:
 
@@ -551,8 +547,7 @@ Advanced Zone Configuration
 
    The traffic types are management, public, guest, and storage traffic.
    For more information about the types, roll over the icons to display
-   their tool tips, or see `“Advanced Zone Network Traffic Types” 
-   <http://docs.cloudstack.apache.org/en/latest/concepts.html?highlight=about%20pods#advanced-zone-network-traffic-types>`_. 
+   their tool tips, or see :ref:`about-adv-network-traffic-types`.
    This screenstarts out with one network already configured. If you have 
    multiple physical networks, you need to add more. Drag and drop traffic 
    types onto a greyed-out network and it will become active. You can move the
@@ -600,8 +595,7 @@ Advanced Zone Configuration
       to guest networks.
 
 #. In a new zone, CloudStack adds the first pod for you. You can always
-   add more pods later. For an overview of what a pod is, see `“About Pods” 
-   <http://docs.cloudstack.apache.org/en/latest/concepts.html?highlight=about%20pods#about-pods>`_.
+   add more pods later. For an overview of what a pod is, see :ref:`about-pods`
 
    To configure the first pod, enter the following, then click Next:
 
@@ -616,16 +610,13 @@ Advanced Zone Configuration
    -  **Start/End Reserved System IP.** The IP range in the management
       network that CloudStack uses to manage various system VMs, such as
       Secondary Storage VMs, Console Proxy VMs, and DHCP. For more
-      information, see `“System Reserved IP Addresses” 
-      <http://docs.cloudstack.apache.org/en/latest/concepts.html?highlight=about%20pods#id4>`_.
-
+      information, see :ref:`about_system_reserved_ip_addresses`
 #. Specify a range of VLAN IDs to carry guest traffic for each physical
    network (see VLAN Allocation Example ), then click Next.
 
 #. In a new pod, CloudStack adds the first cluster for you. You can
    always add more clusters later. For an overview of what a cluster is,
-   see `“About Clusters” 
-   <http://docs.cloudstack.apache.org/en/latest/concepts.html?highlight=about%20pods#about-clusters>`_.
+   see :ref:`about-clusters`
 
    To configure the first cluster, enter the following, then click Next:
 
@@ -641,8 +632,7 @@ Advanced Zone Configuration
       of your choosing and is not used by CloudStack.
 
 #. In a new cluster, CloudStack adds the first host for you. You can
-   always add more hosts later. For an overview of what a host is, see
-   `“About Hosts” <http://docs.cloudstack.apache.org/en/latest/concepts.html?highlight=about%20pods#about-hosts>`_.
+   always add more hosts later. For an overview of what a host is, see :ref:`about-hosts`.
 
    .. note::
       When you deploy CloudStack, the hypervisor host must not have any VMs
@@ -679,8 +669,7 @@ Advanced Zone Configuration
 
 #. In a new cluster, CloudStack adds the first primary storage server
    for you. You can always add more servers later. For an overview of
-   what primary storage is, see `“About Primary Storage” 
-   <http://docs.cloudstack.apache.org/en/latest/concepts.html?highlight=about%20pods#about-primary-storage>`_.
+   what primary storage is, see :ref:`about-primary-storage`
 
    To configure the first primary storage server, enter the following,
    then click Next:
@@ -748,9 +737,10 @@ Advanced Zone Configuration
       has tags T1 and T2, all other clusters in the Zone must also
       provide primary storage that has tags T1 and T2.
 
-#. In a new zone, CloudStack adds the first secondary storage server for
-   you. For an overview of what secondary storage is, see `“About Secondary Storage” 
-   <http://docs.cloudstack.apache.org/en/latest/concepts.html?highlight=about%20pods#about-secondary-storage>`_.
+.. _installing-secondary-storage:
+
+#. In a new zone, CloudStack connects the first secondary storage server for
+   you. For an overview of what secondary storage is, see :ref:`about-secondary-storage`
 
    Before you can fill out this screen, you need to prepare the
    secondary storage by setting up NFS shares and installing the latest
@@ -772,8 +762,7 @@ Adding a Pod
 When you created a new zone, CloudStack adds the first pod for you. You
 can add more pods at any time using the procedure in this section.
 
-#. Log in to the CloudStack UI. See `“Log In to the UI” 
-   <http://docs.cloudstack.apache.org/projects/cloudstack-administration/en/latest/ui.html#log-in-to-the-ui>`_.
+#. Log in to the CloudStack UI. See :ref:`log-in-to-ui`.
 
 #. In the left navigation, choose Infrastructure. In Zones, click View
    More, then click the zone to which you want to add a pod.
@@ -1023,7 +1012,7 @@ For all additional hosts to be added to the cluster, run the following
 command. This will cause the host to join the master in a XenServer
 pool.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # xe pool-join master-address=[master IP] master-username=root master-password=[your password]
 
@@ -1042,7 +1031,7 @@ bonds on the new hosts in the cluster.
 
 #. Run the script:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # ./cloud-setup-bonding.sh
 
@@ -1063,8 +1052,11 @@ KVM Host Additional Requirements
 
 -  If you're using a non-root user to add a KVM host, please add the user to
    sudoers file:
-      cloudstack ALL=NOPASSWD: /usr/bin/cloudstack-setup-agent
-      defaults:cloudstack !requiretty
+
+   .. parsed-literal::
+
+     cloudstack ALL=NOPASSWD: /usr/bin/cloudstack-setup-agent
+     defaults:cloudstack !requiretty
 
 Adding a XenServer or KVM Host
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1162,7 +1154,7 @@ cluster.
    nothing on the storage (ex. you have an empty SAN volume or an empty NFS 
    share). Adding the storage to CloudStack will destroy any existing data.
 
-#. Log in to the CloudStack UI (see `“Log In to the UI” <http://docs.cloudstack.apache.org/projects/cloudstack-administration/en/latest/ui.html#log-in-to-the-ui>`_).
+#. Log in to the CloudStack UI :ref:`log-in-to-ui`.
 
 #. In the left navigation, choose Infrastructure. In Zones, click View
    More, then click the zone in which you want to add the primary
@@ -1502,6 +1494,7 @@ Installation.
 If you decide to grow your deployment, you can add more hosts, primary
 storage, zones, pods, and clusters.
 
+.. _configuration-parameters:
 
 Configuration Parameters
 ------------------------

@@ -28,12 +28,10 @@ are persistent.
 Primary Storage
 ---------------
 
-This section gives concepts and technical details about CloudStack
-primary storage. For information about how to install and configure
-primary storage through the CloudStack UI, see the Installation Guide.
-
-`“About Primary Storage” <http://docs.cloudstack.apache.org/en/latest/concepts.html#about-primary-storage>`_
-
+This section gives technical details about CloudStack
+primary storage. For more information about the concepts behind primary storage 
+see :ref:`about-primary-storage` . For information about how to install and configure
+primary storage through the CloudStack UI, see the in the Installation Guide.
 
 Best Practices for Primary Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -183,9 +181,7 @@ Secondary Storage
 This section gives concepts and technical details about CloudStack
 secondary storage. For information about how to install and configure
 secondary storage through the CloudStack UI, see the Advanced
-Installation Guide.
-
-`“About Secondary Storage” <http://docs.cloudstack.apache.org/en/latest/concepts.html#about-secondary-storage>`_
+Installation Guide. about-secondary-storage>`_
 
 
 Working With Volumes

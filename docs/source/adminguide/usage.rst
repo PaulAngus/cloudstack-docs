@@ -13,6 +13,7 @@
    specific language governing permissions and limitations
    under the License.
    
+.. _working-with-usage:
 
 Working with Usage
 ==================
@@ -79,16 +80,14 @@ for the 24 hours from 00:00:00 GMT to 23:59:59 GMT:
    usage.execution.timezone = PST
    usage.aggregation.timezone = GMT
 
-Valid values for the time zone are specified in `Appendix A, *Time Zones* 
-<http://docs.cloudstack.apache.org/en/latest/dev.html?highlight=time%20zones#time-zones>`_
+Valid values for the time zone are specified in the :ref:`time-zones` section
 
 Default: GMT
 
 usage.execution.timezone
 
 The time zone of usage.stats.job.exec.time. Valid values for the time
-zone are specified in `Appendix A, *Time Zones* 
-<http://docs.cloudstack.apache.org/en/latest/dev.html?highlight=time%20zones#time-zones>`_
+zone are specified in the :ref:`time-zones` section
 
 Default: The time zone of the management server.
 

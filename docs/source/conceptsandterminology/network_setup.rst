@@ -111,7 +111,7 @@ The Dell 62xx Series switch supports up to 1024 VLANs.
 
 #. Configure all the VLANs in the database.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       vlan database
       vlan 200-999
@@ -119,7 +119,7 @@ The Dell 62xx Series switch supports up to 1024 VLANs.
 
 #. Configure Ethernet port 1/g1.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       interface ethernet 1/g1
       switchport mode general
@@ -147,7 +147,7 @@ GigabitEthernet1/0/1.
    1000. Since we only use VLANs up to 999, vtp transparent mode is not
    strictly required.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       vtp mode transparent
       vlan 200-999
@@ -155,7 +155,7 @@ GigabitEthernet1/0/1.
 
 #. Configure GigabitEthernet1/0/1.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       interface GigabitEthernet1/0/1
       switchport trunk encapsulation dot1q
@@ -195,7 +195,7 @@ layer-2 switching.
 
 #. Configure all the VLANs in the database.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       vlan database
       vlan 300-999
@@ -204,7 +204,7 @@ layer-2 switching.
 #. VLAN 201 is used to route untagged private IP addresses for pod 1,
    and pod 1 is connected to this layer-2 switch.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       interface range ethernet all
       switchport mode general
@@ -229,7 +229,7 @@ layer-2 switching.
    1000. Since we only use VLANs up to 999, vtp transparent mode is not
    strictly required.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       vtp mode transparent
       vlan 300-999
@@ -237,7 +237,7 @@ layer-2 switching.
 
 #. Configure all ports to dot1q and set 201 as the native VLAN.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       interface range GigabitEthernet 1/0/1-24
       switchport trunk encapsulation dot1q
@@ -340,7 +340,7 @@ CloudStack requires the Juniper SRX firewall to be configured as follows:
       here is the configuration where the public zone is "untrust" and
       the private zone is "trust":
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          root@cloud-srx# show firewall
          filter trust {
@@ -354,7 +354,7 @@ CloudStack requires the Juniper SRX firewall to be configured as follows:
       sample configuration output (for public interface ge-0/0/3.0,
       public security zone untrust, and private security zone trust) is:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          ge-0/0/3 {
              unit 0 {
@@ -697,8 +697,7 @@ offering as follows:
       Private Cloud-enabled. A Virtual Private Cloud (VPC) is a private,
       isolated part of CloudStack. A VPC can have its own virtual
       network topology that resembles a traditional physical network.
-      For more information on VPCs, see `“About Virtual Private Clouds” 
-      <http://docs.cloudstack.apache.org/projects/cloudstack-administration/en/latest/networking2.html#about-virtual-private-clouds>`_.
+      For more information on VPCs, see :ref: `about-vpc`.
 
    -  **Specify VLAN**: (Isolated guest networks only) Indicate whether
       a VLAN should be specified when this offering is used.
@@ -733,13 +732,13 @@ the SSH credentials by registering on VNMC.
 
    #. Run the following:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          ASA1000V(config)# reload
 
       You are prompted with the following message:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          System config has been modified. Save? [Y]es/[N]o:"
 
@@ -747,7 +746,7 @@ the SSH credentials by registering on VNMC.
 
       You will get the following confirmation message:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          "Proceed with reload? [confirm]"
 
@@ -755,7 +754,7 @@ the SSH credentials by registering on VNMC.
 
 #. Register the ASA 1000v appliance with the VNMC:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       ASA1000V(config)# vnmc policy-agent
       ASA1000V(config-vnmc-policy-agent)# registration host vnmc_ip_address
@@ -1009,8 +1008,7 @@ To set up the integration between CloudStack and Traffic Sentinel:
    <http://cloudstack.apache.org/docs/api/index.html>`_.
 
    For information about how to call the CloudStack API, see the
-   Developer’s Guide at `CloudStack API Developer's Guide 
-   <http://docs.cloudstack.apache.org/en/latest/index.html#developers>`_.
+   Developer’s Guide at the CloudStack API Developer's Guide :ref:`the-api`
 
 #. Log in to the CloudStack UI as administrator.
 

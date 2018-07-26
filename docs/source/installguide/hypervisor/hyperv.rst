@@ -197,7 +197,7 @@ host, install a self-signed certificate on port 8250.
 
    #. Create A self-signed SSL certificate:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          # New-SelfSignedCertificate -DnsName apachecloudstack -CertStoreLocation Cert:\LocalMachine\My
 
@@ -206,7 +206,7 @@ host, install a self-signed certificate on port 8250.
 
    #. Add the created certificate to port 8250 for https communication:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          netsh http add sslcert ipport=0.0.0.0:8250 certhash=<thumbprint> appid="{727beb1c-6e7c-49b2-8fbd-f03dbe481b08}"
 

@@ -71,8 +71,8 @@ Consider the following:
 
 -  Use the System VM template exclusively designed to support IPv6.
    Download the System VM template from
-   `http://cloudstack.apt-get.eu/systemvm/ 
-   <http://cloudstack.apt-get.eu/systemvm/>`__.
+   `http://download.cloudstack.org/systemvm/ 
+   <http://download.cloudstack.org/systemvm/>`__.
 
 -  The concept of Default Network applies to IPv6 networks. However,
    unlike IPv4 CloudStack does not control the routing information of
@@ -119,7 +119,7 @@ each of the VMs. Use DUID-LL to set up dhclient.
    #. Run the following command on the selected VM to get the dhcpv6
       offer from VR:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          dhclient -6 -D LL <dev>
 
@@ -127,13 +127,13 @@ each of the VMs. Use DUID-LL to set up dhclient.
 
    #. Open the following to the dhclient configuration file:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          vi /etc/dhcp/dhclient.conf
 
    #. Add the following to the dhclient configuration file:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          send dhcp6.client-id = concat(00:03:00, hardware);
 
@@ -146,7 +146,7 @@ each of the VMs. Use DUID-LL to set up dhclient.
 
    #. Open the Ethernet interface configuration file:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
@@ -154,7 +154,7 @@ each of the VMs. Use DUID-LL to set up dhclient.
 
    #. Make the necessary configuration changes, as given below:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          DEVICE=eth0
          HWADDR=06:A0:F0:00:00:38
@@ -169,13 +169,13 @@ each of the VMs. Use DUID-LL to set up dhclient.
 
    #. Open the following:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          vi /etc/sysconfig/network
 
    #. Make the necessary configuration changes, as given below:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          NETWORKING=yes
          HOSTNAME=centos62mgmt.lab.vmops.com
@@ -186,13 +186,13 @@ each of the VMs. Use DUID-LL to set up dhclient.
 
    #. Open the following:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          etc/network/interfaces:
 
    #. Make the necessary configuration changes, as given below:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          iface eth0 inet6 dhcp
          autoconf 0

@@ -294,7 +294,7 @@ For the management server role we create a main.yml task like this:
 
    - name: Ensure vhdutil is in correct location
 
-     get\_url: url=http://download.cloud.com.s3.amazonaws.com/tools/vhd-util dest=/usr/share/cloudstack-common/scripts/vm/hypervisor/xenserver/vhd-util mode=0755
+     get\_url: url=http://download.cloudstack.org/tools/vhd-util dest=/usr/share/cloudstack-common/scripts/vm/hypervisor/xenserver/vhd-util mode=0755
 
 
 Save this as `/etc/ansible/roles/cloudstack-management/tasks/main.yml`
@@ -308,7 +308,7 @@ it, so it would simply look like this:
 
    [cloudstack]
    name=cloudstack
-   baseurl=http://cloudstack.apt-get.eu/rhel/4.2/
+   baseurl=http://download.cloudstack.org/rhel/4.2/
    enabled=1
    gpgcheck=0
 

@@ -13,6 +13,7 @@
    specific language governing permissions and limitations
    under the License.
 
+.. _log-in-to-ui:
 
 Log In to the UI
 ----------------
@@ -24,7 +25,7 @@ available in popular browsers including IE7, IE8, IE9, Firefox 3.5+,
 Firefox 4, Safari 4, and Safari 5. The URL is: (substitute your own
 management server IP address)
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    http://<management-server-ip-address>:8080/client
 
@@ -85,7 +86,7 @@ provision, view, and manage your cloud infrastructure.
 #. Open your favorite Web browser and go to this URL. Substitute the IP
    address of your own Management Server:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       http://<management-server-ip-address>:8080/client
 
@@ -148,7 +149,7 @@ new, unique value.
 #. Open your favorite Web browser and go to this URL. Substitute the IP
    address of your own Management Server:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       http://<management-server-ip-address>:8080/client
 

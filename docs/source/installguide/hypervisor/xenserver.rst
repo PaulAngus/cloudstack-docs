@@ -120,20 +120,20 @@ time.
 
 #. Install NTP.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # yum install ntp
 
 #. Edit the NTP configuration file to point to your NTP server.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # vi /etc/ntp.conf
 
    Add one or more server lines in this file with the names of the NTP
    servers you want to use. For example:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       server 0.xenserver.pool.ntp.org
       server 1.xenserver.pool.ntp.org
@@ -142,13 +142,13 @@ time.
 
 #. Restart the NTP client.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # service ntpd restart
 
 #. Make sure NTP will start again upon reboot.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # chkconfig ntpd on
 
@@ -169,13 +169,13 @@ CSP functionality is already present in XenServer 6.1
 
 #. Run the below command
    
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       xe-switch-network-backend bridge
 
 #. update sysctl.conf with the following
 
-   .. sourcecode:: bash
+   .. parsed-literal::
    
       net.bridge.bridge-nf-call-iptables = 1
       net.bridge.bridge-nf-call-ip6tables = 0
@@ -207,20 +207,20 @@ CSP functionality is already present in XenServer 6.1
  
 #. Extract the file:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # tar xf xenserver-cloud-supp.tgz
 
 #. Run the following script:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # xe-install-supplemental-pack xenserver-cloud-supp.iso
 
 #. If the XenServer host is part of a zone that uses basic networking,
    disable Open vSwitch (OVS):
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # xe-switch-network-backend  bridge
 
@@ -249,7 +249,7 @@ that XenServer.
 #. Rescan the SCSI bus. Either use the following command or use
    XenCenter to perform an HBA rescan.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # scsi-rescan
 
@@ -257,14 +257,14 @@ that XenServer.
 
 #. Check to be sure you see the new SCSI disk.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # ls /dev/disk/by-id/scsi-360a98000503365344e6f6177615a516b -l
 
    The output should look like this, although the specific file name
    will be different (scsi-<scsiID>):
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       lrwxrwxrwx 1 root root 9 Mar 16 13:47
       /dev/disk/by-id/scsi-360a98000503365344e6f6177615a516b -> ../../sdc
@@ -274,21 +274,21 @@ that XenServer.
 #. On the storage server, run this command to get a unique ID for the
    new SR.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # uuidgen
 
    The output should look like this, although the specific ID will be
    different:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       e6849e96-86c3-4f2c-8fcc-350cc711be3d
 
 #. Create the FiberChannel SR. In name-label, use the unique ID you just
    generated.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # xe sr-create type=lvmohba shared=true
       device-config:SCSIid=360a98000503365344e6f6177615a516b
@@ -297,7 +297,7 @@ that XenServer.
    This command returns a unique ID for the SR, like the following
    example (your ID will be different):
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       7a143820-e893-6c6a-236e-472da6ee66bf
 
@@ -305,7 +305,7 @@ that XenServer.
    command. In uuid, use the SR ID returned by the previous command. In
    name-description, set whatever friendly text you prefer.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # xe sr-param-set uuid=7a143820-e893-6c6a-236e-472da6ee66bf name-description="Fiber Channel storage repository"
 
@@ -381,7 +381,7 @@ name-label of the XenServer network must match the XenServer traffic
 label specified while creating the CloudStack network. This is set by
 running the following command:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    xe network-param-set uuid=<network id> name-label=<CloudStack traffic label>
 
@@ -414,7 +414,7 @@ CloudStack before adding the host.
 
 #. Run the following command.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # xe network-param-set name-label=cloud-public uuid=<UUID-Public>
 
@@ -438,7 +438,7 @@ CloudStack:
 #. Run the following command, substituting your own name-label and uuid
    values.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # xe network-param-set name-label=<cloud-guestN> uuid=<UUID-Guest>
 
@@ -477,7 +477,7 @@ separate storage network on all hosts (masters and slaves).
 Here is an example to set up eth5 to access a storage network on
 172.16.0.0/24.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # xe pif-list host-name-label='hostname' device=eth5
    uuid(RO): ab0d3dd4-5744-8fae-9693-a022c7a3471d
@@ -539,7 +539,7 @@ into it.
 
 #. Find the physical NICs that you want to bond together.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # xe pif-list host-name-label='hostname' device=eth0
       # xe pif-list host-name-label='hostname' device=eth1
@@ -555,7 +555,7 @@ into it.
    you configure. You must use the same name-label for all hosts in the
    cloud for the management network.**
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # xe network-create name-label=cloud-private
       # xe bond-create network-uuid=[uuid of cloud-private created above]
@@ -583,7 +583,7 @@ and eth3) bonded into it.
 
 #. Find the physical NICs that you want to bond together.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # xe pif-list host-name-label='hostname' device=eth2
       # xe pif-list host-name-label='hostname' device=eth3
@@ -599,7 +599,7 @@ and eth3) bonded into it.
    you configure. You must use the same name-label for all hosts in the
    cloud for the public network.**
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # xe network-create name-label=cloud-public
       # xe bond-create network-uuid=[uuid of cloud-public created above]
@@ -617,7 +617,7 @@ additional, slave hosts. Run the following command for all additional
 hosts to be added to the cluster. This will cause the host to join the
 master in a single XenServer pool.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # xe pool-join master-address=[master IP] master-username=root
    master-password=[your password]
@@ -636,7 +636,7 @@ all hosts in the cluster.
 
 #. Run the script:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # ./cloud-setup-bonding.sh
 
@@ -663,7 +663,7 @@ To upgrade XenServer:
 
    #. Back up the database:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
           # mysqldump --user=root --databases cloud > cloud.backup.sql
           # mysqldump --user=root --databases cloud_usage > cloud_usage.backup.sql
@@ -692,7 +692,7 @@ To upgrade XenServer:
    #. Restart the Management Server and Usage Server. You only need to
       do this once for all clusters.
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          # service cloudstack-management start
          # service cloudstack-usage start
@@ -708,13 +708,13 @@ To upgrade XenServer:
 #. Log in to one of the hosts in the cluster, and run this command to
    clean up the VLAN:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # . /opt/xensource/bin/cloud-clean-vlan.sh
 
 #. Still logged in to the host, run the upgrade preparation script:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # /opt/xensource/bin/cloud-prepare-upgrade.sh
 
@@ -730,7 +730,7 @@ To upgrade XenServer:
       Troubleshooting: You might see the following error when you
       migrate a VM:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          [root@xenserver-qa-2-49-4 ~]# xe vm-migrate live=true host=xenserver-qa-2-49-5 vm=i-2-8-VM
          You attempted an operation on a VM which requires PV drivers to be installed but the drivers were not detected.
@@ -738,7 +738,7 @@ To upgrade XenServer:
 
       To solve this issue, run the following:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          # /opt/xensource/bin/make_migratable.sh  b6cf79c8-02ee-050b-922f-49583d9f1a14
 
@@ -764,21 +764,21 @@ To upgrade XenServer:
 
    #. Run the following script:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          # /opt/xensource/bin/setupxenserver.sh
 
       Troubleshooting: If you see the following error message, you can
       safely ignore it.
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          mv: cannot stat `/etc/cron.daily/logrotate`: No such file or directory
 
    #. Plug in the storage repositories (physical block devices) to the
       XenServer host:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          # for pbd in `xe pbd-list currently-attached=false| grep ^uuid | awk '{print $NF}'`; do xe pbd-plug uuid=$pbd ; done
 
@@ -792,7 +792,7 @@ To upgrade XenServer:
 #. Run the following command on one host in the XenServer cluster to
    clean up the host tags:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # for host in $(xe host-list | grep ^uuid | awk '{print $NF}') ; do xe host-param-clear uuid=$host param-name=tags; done;
 
@@ -811,6 +811,6 @@ To upgrade XenServer:
 
 #. After all hosts are up, run the following on one host in the cluster:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # /opt/xensource/bin/cloud-clean-vlan.sh

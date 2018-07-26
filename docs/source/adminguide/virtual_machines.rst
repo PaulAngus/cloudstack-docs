@@ -1036,25 +1036,25 @@ Create an instance template that supports SSH Keys.
    <http://sourceforge.net/projects/cloudstack/files/SSH%20Key%20Gen%20Script/>`_ 
    to the instance you have created.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       wget http://downloads.sourceforge.net/project/cloudstack/SSH%20Key%20Gen%20Script/cloud-set-guest-sshkey.in?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fcloudstack%2Ffiles%2FSSH%2520Key%2520Gen%2520Script%2F&ts=1331225219&use_mirror=iweb
 
 #. Copy the file to /etc/init.d.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       cp cloud-set-guest-sshkey.in /etc/init.d/
 
 #. Give the necessary permissions on the script:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       chmod +x /etc/init.d/cloud-set-guest-sshkey.in
 
 #. Run the script while starting up the operating system:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       chkconfig --add cloud-set-guest-sshkey.in
 
@@ -1078,13 +1078,13 @@ keypair called "keypair-doc" for the admin account in the root domain:
 
 #. Run the following curl command:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       curl --globoff "http://localhost:8096/?command=createSSHKeyPair&name=keypair-doc&account=admin&domainid=5163440e-c44b-42b5-9109-ad75cae8e8a2"
 
    The output is something similar to what is given below:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       <?xml version="1.0" encoding="ISO-8859-1"?><createsshkeypairresponse cloud-stack-version="3.0.0.20120228045507"><keypair><name>keypair-doc</name><fingerprint>f6:77:39:d5:5e:77:02:22:6a:d8:7f:ce:ab:cd:b3:56</fingerprint><privatekey>-----BEGIN RSA PRIVATE KEY-----
       MIICXQIBAAKBgQCSydmnQ67jP6lNoXdX3noZjQdrMAWNQZ7y5SrEu4wDxplvhYci
@@ -1102,7 +1102,7 @@ keypair called "keypair-doc" for the admin account in the root domain:
 
 #. Copy the key data into a file. The file looks like this:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       -----BEGIN RSA PRIVATE KEY-----
       MIICXQIBAAKBgQCSydmnQ67jP6lNoXdX3noZjQdrMAWNQZ7y5SrEu4wDxplvhYci
@@ -1135,7 +1135,7 @@ Ensure that you use the same SSH key name that you created at
 
 A sample curl command to create a new instance is:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    curl --globoff http://localhost:<port number>/?command=deployVirtualMachine\&zoneId=1\&serviceOfferingId=18727021-7556-4110-9322-d625b52e0813\&templateId=e899c18a-ce13-4bbf-98a9-625c5026e0b5\&securitygroupids=ff03f02f-9e3b-48f8-834d-91b822da40c5\&account=admin\&domainid=1\&keypair=keypair-doc
 
@@ -1152,7 +1152,7 @@ in to the cloud setup.
 
 For example, from a Linux OS, run:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    ssh -i ~/.ssh/keypair-doc <ip address>
 

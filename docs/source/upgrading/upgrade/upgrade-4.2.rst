@@ -20,7 +20,7 @@ Upgrade Instruction from |version_to_upgrade|
 =============================================
 
 This section will guide you from CloudStack |version_to_upgrade| to CloudStack 
-|version|.
+|release|.
 
 .. include:: _upgrade_header.rst
 
@@ -46,7 +46,7 @@ APT. This guide assumes you'll be using RPM and Yum (for Red Hat
 Enterprise Linux or CentOS), or APT and Debian packages (for Ubuntu).
 
 Create RPM or Debian packages (as appropriate) and a repository from
-the |version| source, or check the Apache CloudStack downloads page at
+the |release| source, or check the Apache CloudStack downloads page at
 http://cloudstack.apache.org/downloads.html
 for package repositories supplied by community members. You will need
 them for :ref:`ubuntu42` or :ref:`rhel42` and :ref:`kvm42` hosts upgrade. 
@@ -65,13 +65,13 @@ Backup current database
 #. Stop your management server or servers. Run this on all management
    server hosts:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo service cloudstack-management stop
 
 #. If you are running a usage server or usage servers, stop those as well:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo service cloudstack-usage stop
 
@@ -80,7 +80,7 @@ Backup current database
    restoring your existing environment. You'll be prompted for your
    password.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ mysqldump -u root -p cloud > cloud-backup_`date '+%Y-%m-%d'`.sql
       $ mysqldump -u root -p cloud_usage > cloud_usage-backup_`date '+%Y-%m-%d'`.sql
@@ -91,14 +91,14 @@ Backup current database
    validation. Check local storage by querying the cloud.storage\_pool
    table:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ mysql -u cloud -p -e "select id,name,path from cloud.storage_pool where pool_type='Filesystem'"
 
    If local storage paths are found to have a trailing forward slash,
    remove it:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';
 
@@ -133,41 +133,41 @@ any systems that have CloudStack packages installed.
 
 This file should have one line, which contains:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
-   deb http://cloudstack.apt-get.eu/ubuntu precise 4.2
+   deb http://download.cloudstack.org/ubuntu precise 4.2
 
 We'll change it to point to the new package repository:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
-   deb http://cloudstack.apt-get.eu/ubuntu precise 4.8
+   deb http://download.cloudstack.org/ubuntu precise 4.8
 
 Setup the public key for the above repository:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
-   wget -qO - http://cloudstack.apt-get.eu/release.asc | sudo apt-key add -
+   wget -qO - http://download.cloudstack.org/release.asc | sudo apt-key add -
 
 If you're using your own package repository, change this line to
 read as appropriate for your |version| repository.
 
 #. Now update your apt package list:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo apt-get update
 
 #. Now that you have the repository configured, it's time to upgrade
    the ``cloudstack-management`` package. 
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo apt-get upgrade cloudstack-management
 
 #. If you use CloudStack usage server
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo apt-get upgrade cloudstack-usage
 
@@ -178,7 +178,7 @@ Management Server CentOS/RHEL
 -----------------------------
 
 If you are using CentOS or RHEL, follow this procedure to upgrade your 
-packages. If not, skip to hypervisors section, then :ref:`upg-sysvm42`.
+packages. If not, skip to hypervisors section :ref:`upg_hyp_42`.
 
 .. note:: 
    **Community Packages:** This section assumes you're using the community 
@@ -204,57 +204,58 @@ systems that have CloudStack packages installed.
 
 This file should have content similar to the following:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    [apache-cloudstack]
    name=Apache CloudStack
-   baseurl=http://cloudstack.apt-get.eu/rhel/4.2/
+   baseurl=http://download.cloudstack.org/rhel/4.2/
    enabled=1
    gpgcheck=0
 
 If you are using the community provided package repository, change
-the baseurl to ``http://cloudstack.apt-get.eu/centos/6/4.8/``.
+the baseurl to ``http://download.cloudstack.org/centos/6/4.8/``.
 
 Setup the GPG public key if you wish to enable ``gpgcheck=1``:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
-   rpm --import http://cloudstack.apt-get.eu/RPM-GPG-KEY
+   rpm --import http://download.cloudstack.org/RPM-GPG-KEY
 
 If you're using your own package repository, change this line to
 read as appropriate for your |version| repository.
 
 #. Remove the deprecated dependency for awsapi.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo rpm -e --nodeps cloudstack-awsapi
 
 #. Now that you have the repository configured, it's time to upgrade the 
    ``cloudstack-management``.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo yum upgrade cloudstack-management
 
 #. If you use CloudStack usage server
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo yum upgrade cloudstack-usage
 
+.. _upg_hyp_42:
 
 Hypervisor: Xen/XenServer
 -------------------------
 
 **(XenServer only)** Copy vhd-utils file on CloudStack management servers.
-Copy the file `vhd-utils <http://download.cloud.com.s3.amazonaws.com/tools/vhd-util>`_ 
+Copy the file `vhd-utils <http://download.cloudstack.org/tools/vhd-util>`_ 
 to ``/usr/share/cloudstack-common/scripts/vm/hypervisor/xenserver``.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    wget -P /usr/share/cloudstack-common/scripts/vm/hypervisor/xenserver \
-   http://download.cloud.com.s3.amazonaws.com/tools/vhd-util
+   http://download.cloudstack.org/tools/vhd-util
 
 .. include:: _xenserver_upg.rst
 
@@ -264,8 +265,7 @@ Hypervisor: VMware
 
 .. warning::
    For VMware hypervisor CloudStack management server packages must be 
-   build using "noredist". Refer to `Building from Source 
-   <http://docs.cloudstack.apache.org/projects/cloudstack-installation/en/latest/building_from_source.html>`_.
+   build using "noredist". Refer to :ref:`building-noredist`
 
 **(VMware only)** Additional steps are required for each VMware cluster.
 These steps will not affect running guests in the cloud. These steps
@@ -273,13 +273,13 @@ are required only for clouds using VMware clusters:
 
 #. Stop the Management Server:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo service cloudstack-management stop
 
 #. Generate the encrypted equivalent of your vCenter password:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.2.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI encrypt.sh input="_your_vCenter_password_" password="`cat /etc/cloudstack/management/key`" verbose=false
 
@@ -289,42 +289,42 @@ are required only for clouds using VMware clusters:
 
 #. Find the ID of the row of cluster\_details table that you have to update:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ mysql -u <username> -p<password>
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       select * from cloud.cluster_details;
 
 #. Update the plain text password with the encrypted one
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       update cloud.cluster_details set value = '_ciphertext_from_step_1_' where id = _id_from_step_2_;
 
 #. Confirm that the table is updated:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       select * from cloud.cluster_details;
 
 #. Find the ID of the correct row of vmware\_data\_center that you
    want to update
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       select * from cloud.vmware_data_center;
 
 #. Update the plain text password with the encrypted one:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       update cloud.vmware_data_center set password = '_ciphertext_from_step_1_' where id = _id_from_step_5_;
 
 #. Confirm that the table is updated:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       select * from cloud.vmware_data_center;
 
@@ -343,24 +343,24 @@ steps will not affect running guests in the cloud. These steps are
 required only for clouds using KVM as hosts and only on the KVM
 hosts.
 
-#. Configure the :ref:`apt-repo42` as detailed above.
+#. Configure the :ref:`APT repo <apt-repo42>` as detailed above.
 
 #. Stop the running agent.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo service cloudstack-agent stop
 
 #. Update the agent software.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo apt-get upgrade cloudstack-agent
 
 #. Verify that the file ``/etc/cloudstack/agent/environment.properties`` has a 
    line that reads:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       paths.script=/usr/share/cloudstack-common
 
@@ -368,7 +368,7 @@ hosts.
 
 #. Start the agent.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo service cloudstack-agent start
 
@@ -379,14 +379,14 @@ For KVM hosts, upgrade the ``cloudstack-agent`` package
 
 #. Configure the :ref:`rpm-repo42` as detailed above.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo yum upgrade cloudstack-agent
 
 #. Verify that the file ``/etc/cloudstack/agent/environment.properties`` has a 
    line that reads:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       paths.script=/usr/share/cloudstack-common
 
@@ -394,7 +394,7 @@ For KVM hosts, upgrade the ``cloudstack-agent`` package
 
 #. Restart the agent:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo service cloudstack-agent stop
       $ sudo killall jsvc
@@ -406,13 +406,13 @@ Restart management services
 
 #. Now it's time to start the management server
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo service cloudstack-management start
 
 #. If you use it, start the usage server
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo service cloudstack-usage start
 

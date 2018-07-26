@@ -35,7 +35,7 @@ the Management server.
 Install on CentOS/RHEL
 ^^^^^^^^^^^^^^^^^^^^^^
    
-.. sourcecode:: bash
+.. parsed-literal::
 
    yum install cloudstack-management
 
@@ -43,7 +43,7 @@ Install on CentOS/RHEL
 Install on Ubuntu
 ^^^^^^^^^^^^^^^^^
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    sudo apt-get install cloudstack-management
 

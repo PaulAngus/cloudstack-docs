@@ -328,7 +328,7 @@ properly in the prerequisites step.
 
 ::
 
-   pip install tools/marvin/dist/Marvin-0.1.0.tar.gz
+   pip install tools/marvin/dist/Marvin-|release|.tar.gz
 
 Stop jetty (from any previous runs)
 
@@ -407,7 +407,7 @@ At this stage install marvin similarly than with the simulator:
 
 ::
 
-   pip install tools/marvin/dist/Marvin-0.1.0.tar.gz
+   pip install tools/marvin/dist/Marvin-|release|.tar.gz
 
 Start the management server
 
@@ -447,8 +447,7 @@ infrastructure. The may also need to build their own packages for
 security reasons and due to network connectivity constraints. This
 section shows you the gist of how to build packages. We assume that the
 reader will know how to create a repository to serve this packages. The
-complete documentation is available on the
-`website <http://docs.cloudstack.apache.org/projects/cloudstack-installation/en/latest/building_from_source.html#building-deb-packages>`_
+complete documentation is available in the :ref:`building_deb_packages` section.
 
 To build debian packages you will need couple extra packages that we did
 not need to install for source compilation:
@@ -468,22 +467,23 @@ One directory up from the CloudStack root dir you will find:
 
 ::
 
-   cloudstack_4.8.0_amd64.changes
-   cloudstack_4.8.0.dsc
-   cloudstack_4.8.0.tar.gz
-   cloudstack-agent_4.8.0_all.deb
-   cloudstack-awsapi_4.8.0_all.deb
-   cloudstack-cli_4.8.0_all.deb
-   cloudstack-common_4.8.0_all.deb
-   cloudstack-docs_4.8.0_all.deb
-   cloudstack-management_4.8.0_all.deb
-   cloudstack-usage_4.8.0_all.deb
+   cloudstack_|release|_amd64.changes
+   cloudstack_|release|.dsc
+   cloudstack_|release|.tar.gz
+   cloudstack-agent_|release|_all.deb
+   cloudstack-awsapi_|release|_all.deb
+   cloudstack-cli_|release|_all.deb
+   cloudstack-common_|release|_all.deb
+   cloudstack-docs_|release|_all.deb
+   cloudstack-management_|release|_all.deb
+   cloudstack-usage_|release|_all.deb
 
 Of course the community provides a repository for these packages and you
 can use it instead of building your own packages and putting them in
 your own repo. Instructions on how to use this community repository are
 available in the installation book.
 
+.. _the-api:
 
 The CloudStack API
 ------------------

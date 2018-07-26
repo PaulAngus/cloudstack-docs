@@ -135,7 +135,7 @@ shown in the following example:
 Now that we have the configuration files properly set up, we need to run a few 
 commands to start up the network: 
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # chkconfig network on
 
@@ -151,20 +151,20 @@ CloudStack requires that the hostname be properly set. If you used the default
 options in the installation, then your hostname is currently set to 
 localhost.localdomain. To test this we will run:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # hostname --fqdn
 
 At this point it will likely return: 
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    localhost
 
 To rectify this situation - we'll set the hostname by editing the /etc/hosts 
 file so that it follows a similar format to this example:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4
    ::1 localhost localhost.localdomain localhost6 localhost6.localdomain6
@@ -172,7 +172,7 @@ file so that it follows a similar format to this example:
 
 After you've modified that file, go ahead and restart the network using:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # service network restart
 
@@ -192,14 +192,14 @@ the current running system.
 To configure SELinux to be permissive in the running system we need to run the 
 following command:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # setenforce 0
 
 To ensure that it remains in that state we need to configure the file 
 /etc/selinux/config to reflect the permissive state, as shown in this example:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # This file controls the state of SELinux on the system.
    # SELINUX= can take one of these three values:
@@ -222,14 +222,14 @@ NTP configuration is a necessity for keeping all of the clocks in your cloud
 servers in sync. However, NTP is not installed by default. So we'll install 
 and and configure NTP at this stage. Installation is accomplished as follows:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # yum -y install ntp
 
 The actual default configuration is fine for our purposes, so we merely need 
 to enable it and set it to start on boot as follows:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # chkconfig ntpd on
    # service ntpd start
@@ -256,7 +256,7 @@ insert the following information.
 
    [cloudstack]
    name=cloudstack
-   baseurl=http://cloudstack.apt-get.eu/centos/6/4.11/
+   baseurl=http://download.cloudstack.org/centos/6/|version|/
    enabled=1
    gpgcheck=0
 
@@ -268,7 +268,7 @@ Our configuration is going to use NFS for both primary and secondary storage.
 We are going to go ahead and setup two NFS shares for those purposes. We'll 
 start out by installing nfs-utils.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # yum -y install nfs-utils
 
@@ -276,16 +276,16 @@ We now need to configure NFS to serve up two different shares. This is handled
 comparatively easily in the /etc/exports file. You should ensure that it has 
 the following content:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
-   /export/secondary *(rw,async,no_root_squash,no_subtree_check)
-   /export/primary *(rw,async,no_root_squash,no_subtree_check)
+   /export/secondary \*(rw,async,no_root_squash,no_subtree_check)
+   /export/primary \*(rw,async,no_root_squash,no_subtree_check)
 
 You will note that we specified two directories that don't exist (yet) on the 
 system. We'll go ahead and create those directories and set permissions 
 appropriately on them with the following commands:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # mkdir -p /export/primary
    # mkdir /export/secondary
@@ -298,7 +298,7 @@ Domain = cloud.priv
 Now you'll need uncomment the configuration values in the file 
 /etc/sysconfig/nfs
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    LOCKD_TCPPORT=32803
    LOCKD_UDPPORT=32769
@@ -310,7 +310,7 @@ Now you'll need uncomment the configuration values in the file
 Now we need to configure the firewall to permit incoming NFS connections. 
 Edit the file /etc/sysconfig/iptables
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    -A INPUT -s 172.16.10.0/24 -m state --state NEW -p udp --dport 111 -j ACCEPT
    -A INPUT -s 172.16.10.0/24 -m state --state NEW -p tcp --dport 111 -j ACCEPT
@@ -326,14 +326,14 @@ Edit the file /etc/sysconfig/iptables
 
 Now you can restart the iptables service with the following command:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # service iptables restart
 
 We now need to configure the nfs service to start on boot and actually start 
 it on the host by executing the following commands:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # service rpcbind start
    # service nfs start
@@ -355,7 +355,7 @@ runs well with CloudStack.
 
 Install by running the following command: 
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # yum -y install mysql-server
 
@@ -374,7 +374,7 @@ section:
 Now that MySQL is properly configured we can start it and configure it to 
 start on boot as follows:
 
-.. sourcecode:: bash 
+.. parsed-literal:: 
 
    # service mysqld start
    # chkconfig mysqld on
@@ -386,7 +386,7 @@ MySQL connector Installation
 Install Python MySQL connector using the official MySQL packages repository.
 Create the file ``/etc/yum.repos.d/mysql.repo`` with the following content:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    [mysql-connectors-community]
    name=MySQL Community connectors
@@ -396,13 +396,13 @@ Create the file ``/etc/yum.repos.d/mysql.repo`` with the following content:
 
 Import GPG public key from MySQL:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    rpm --import http://repo.mysql.com/RPM-GPG-KEY-mysql
 
 Install mysql-connector
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    yum install mysql-connector-python
 
@@ -413,14 +413,14 @@ Installation
 We are now going to install the management server. We do that by executing the 
 following command:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # yum -y install cloudstack-management
 
 With the application itself installed we can now setup the database, we'll do 
 that with the following command and options:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # cloudstack-setup-databases cloud:password@localhost --deploy-as=root
 
@@ -430,7 +430,7 @@ successfully initialized the database."
 Now that the database has been created, we can take the final step in setting 
 up the management server by issuing the following command:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # cloudstack-setup-management
 
@@ -449,11 +449,11 @@ Now we need to download the system VM template and deploy that to the share we
 just mounted. The management server includes a script to properly manipulate 
 the system VMs images.
 
-.. sourcecode:: bash
+.. parsed-literal::
   
    /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt \
    -m /export/secondary \
-   -u http://cloudstack.apt-get.eu/systemvm/4.6/systemvm64template-4.6.0-kvm.qcow2.bz2 \
+   -u http://download.cloudstack.org/systemvm/4.6/systemvm64template-4.6.0-kvm.qcow2.bz2 \
    -h kvm -F
 
 
@@ -498,7 +498,7 @@ Installation
 Installation of the KVM agent is trivial with just a single command, but 
 afterwards we'll need to configure a few things.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # yum -y install cloudstack-agent
 
@@ -553,7 +553,7 @@ and should already be installed.
 
 #. Restart libvirt
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       # service libvirtd restart
 
@@ -561,7 +561,7 @@ and should already be installed.
 KVM configuration complete
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 For the sake of completeness you should check if KVM is running OK on your machine:
-   .. sourcecode:: bash
+   .. parsed-literal::
    
       # lsmod | grep kvm
       kvm_intel              55496  0

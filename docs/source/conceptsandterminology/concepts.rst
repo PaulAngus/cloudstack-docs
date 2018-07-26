@@ -159,6 +159,7 @@ The management server:
 
 -  Provides a single point of configuration for your cloud.
 
+.. _infrastructure-overview:
 
 Cloud Infrastructure Overview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -204,6 +205,8 @@ of two scenarios:
 CloudStack Terminology
 ----------------------
 
+.. _about-regions:
+
 About Regions
 ~~~~~~~~~~~~~
 
@@ -228,7 +231,8 @@ managing widely-dispersed zones from a single central Management Server.
 Usage records can also be consolidated and tracked at the region level,
 creating reports or invoices for each geographic region.
 
-| /_static/images/region-overview.png: Nested structure of a region.|
+.. figure:: /_static/images/region-overview.png
+
 
 Regions are visible to the end user. When a user starts a guest VM on a
 particular CloudStack Management Server, the user is implicitly
@@ -236,6 +240,8 @@ selecting that region for their guest. Users might also be required to
 copy their private templates to additional regions to enable creation of
 guest VMs using their templates in those regions.
 
+
+.. _about-zones:
 
 About Zones
 ~~~~~~~~~~~
@@ -258,7 +264,7 @@ A zone consists of:
 
 -  Secondary storage, which is shared by all the pods in the zone.
 
-| /_static/images/zone-overview.png: Nested structure of a simple zone.|
+.. figure:: /_static/images/zone-overview.png
 
 Zones are visible to the end user. When a user starts a guest VM, the
 user must select a zone for their guest. Users might also be required to
@@ -311,6 +317,7 @@ will be set up as a single zone in CloudStack.
    zone-wide primary storage and live storage migration, will not be available 
    in that zone.
 
+.. _about-pods:
 
 About Pods
 ~~~~~~~~~~
@@ -322,8 +329,9 @@ contain one or more pods. A pod consists of one or more clusters of
 hosts and one or more primary storage servers. Pods are not visible to
 the end user.
 
-| /_static/images/pod-overview.png: Nested structure of a simple pod|
+.. figure:: /_static/images/pod-overview.png
 
+.. _about-clusters:
 
 About Clusters
 ~~~~~~~~~~~~~~
@@ -345,7 +353,7 @@ Best Practices.
 A cluster consists of one or more hosts and one or more primary storage
 servers.
 
-| /_static/images/cluster-overview.png: Structure of a simple cluster|
+.. figure:: /_static/images/cluster-overview.png
 
 CloudStack allows multiple clusters in a cloud deployment.
 
@@ -357,6 +365,7 @@ server. An Administrator must register the vCenter server with
 CloudStack. There may be multiple vCenter servers per zone. Each vCenter
 server may manage multiple VMware clusters.
 
+.. _about-hosts:
 
 About Hosts
 ~~~~~~~~~~~
@@ -574,6 +583,7 @@ the CIDR of the pod to the guests in that pod. The administrator must
 add a Direct IP range on the pod for this purpose. These IPs are in the
 same VLAN as the hosts.
 
+.. _about-adv-network-traffic-types:
 
 Advanced Zone Network Traffic Types
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -645,6 +655,7 @@ attach to these networks. The networks are defined by a VLAN ID, IP
 range, and gateway. The administrator may provision thousands of these
 networks if desired.
 
+.. _about_system_reserved_ip_addresses:
 
 System Reserved IP Addresses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -710,12 +721,3 @@ techniques:
 -  Create multiple pods, each with its own subnet. For example, if you
    create 10 pods and each pod has 255 IPs, this will provide 2,550 IP
    addresses.
-
-
-.. | /_static/images/1000-foot-view.png: Overview of CloudStack| image:: /_static/images/1000-foot-view.png
-.. | /_static/images/basic-deployment.png: Basic two-machine deployment| image:: /_static/images/basic-deployment.png
-.. | /_static/images/infrastructure_overview.png: Nested organization of a zone| image:: /_static/images/infrastructure-overview.png
-.. | /_static/images/region-overview.png: Nested structure of a region.| image:: /_static/images/region-overview.png
-.. | /_static/images/zone-overview.png: Nested structure of a simple zone.| image:: /_static/images/zone-overview.png
-.. | /_static/images/pod-overview.png: Nested structure of a simple pod| image:: /_static/images/pod-overview.png
-.. | /_static/images/cluster-overview.png: Structure of a simple cluster| image:: /_static/images/cluster-overview.png

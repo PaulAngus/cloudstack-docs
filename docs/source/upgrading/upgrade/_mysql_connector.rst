@@ -1,7 +1,7 @@
 Install new MySQL connector
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Apache CloudStack |version| require an upgrade of the MySQL connector on CentOS.
+Apache CloudStack |release| require an upgrade of the MySQL connector on CentOS.
 Starting with 4.9.0, cloudstack-management RPM's now depend on
 ``mysql-connector-python`` package.
 
@@ -11,7 +11,7 @@ MySQL connector RPM repository
 
 Add a new yum repo ``/etc/yum.repos.d/mysql.repo``:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    [mysql-community]
    name=MySQL Community connectors
@@ -21,13 +21,13 @@ Add a new yum repo ``/etc/yum.repos.d/mysql.repo``:
 
 Import GPG public key from MySQL:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    rpm --import http://repo.mysql.com/RPM-GPG-KEY-mysql
 
 Install mysql-connector
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    yum install mysql-connector-python
 

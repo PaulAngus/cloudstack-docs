@@ -18,12 +18,12 @@
 Java 8 JRE on Ubuntu
 --------------------
 
-CloudStack |release| requires installation of Java 8 JRE from an external PPA
+CloudStack |version| requires installation of Java 8 JRE from an external PPA
 such as openjdk-r for Ubuntu distributions where the openjdk-8 packages are not
 available from the main repositories such as on Ubuntu 14.04. The PPA can be
 added before installation/upgrade:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ sudo add-apt-repository ppa:openjdk-r/ppa
       $ sudo apt-get update

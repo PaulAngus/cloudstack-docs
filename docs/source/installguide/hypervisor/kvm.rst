@@ -102,7 +102,7 @@ KVM instances.
 
 #. Check for a fully qualified hostname.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ hostname --fqdn
 
@@ -112,7 +112,7 @@ KVM instances.
 
 #. Make sure that the machine can reach the Internet.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ ping www.cloudstack.org
 
@@ -124,11 +124,11 @@ KVM instances.
 
    #. Install NTP
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          $ yum install ntp
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          $ apt-get install openntpd
 
@@ -146,13 +146,13 @@ First we start by installing the agent:
 
 In RHEL or CentOS:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ yum install cloudstack-agent
 
 In Ubuntu:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ apt-get install cloudstack-agent
 
@@ -164,7 +164,7 @@ the host!
 If you're using a non-root user to add the KVM host, please add the user to
 sudoers file:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    cloudstack ALL=NOPASSWD: /usr/bin/cloudstack-setup-agent
    defaults:cloudstack !requiretty
@@ -190,7 +190,7 @@ specify the guest CPU config in the per-host configuration file
 (/etc/cloudstack/agent/agent.properties). This will be achieved by
 introducing following configuration parameters:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    guest.cpu.mode=custom|host-model|host-passthrough
    guest.cpu.model=from /usr/share/libvirt/cpu_map.xml(only valid when guest.cpu.mode=custom)
@@ -220,20 +220,20 @@ Here are some examples:
 
 -  custom
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       guest.cpu.mode=custom
       guest.cpu.model=SandyBridge
 
 -  host-model
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       guest.cpu.mode=host-model
 
 -  host-passthrough
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       guest.cpu.mode=host-passthrough
       guest.cpu.features=vmx
@@ -258,23 +258,23 @@ cloudstack-agent and should already be installed.
 
    Set the following parameters:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       listen_tls = 0
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       listen_tcp = 1
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       tcp_port = "16509"
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       auth_tcp = "none"
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       mdns_adv = 0
 
@@ -285,7 +285,7 @@ cloudstack-agent and should already be installed.
 
    Uncomment the following line:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       #LIBVIRTD_ARGS="--listen"
 
@@ -293,13 +293,13 @@ cloudstack-agent and should already be installed.
 
    Add "-l" to the following line
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       libvirtd_opts="-d"
 
    so it looks like:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       libvirtd_opts="-d -l"
 
@@ -307,13 +307,13 @@ cloudstack-agent and should already be installed.
 
    Add "-l" to the following line
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       env libvirtd_opts="-d"
 
    so it looks like:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       env libvirtd_opts="-d -l"
 
@@ -321,13 +321,13 @@ cloudstack-agent and should already be installed.
 
    Add "-l" to the following line
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       env libvirtd_opts="-d"
 
    so it looks like:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       env libvirtd_opts="-d -l"
 
@@ -338,13 +338,13 @@ cloudstack-agent and should already be installed.
 
    In RHEL or CentOS:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ service libvirtd restart
 
    In Ubuntu:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       $ service libvirt-bin restart
 
@@ -364,7 +364,7 @@ ensure the Agent has all the required permissions.
       In RHEL or CentOS, SELinux is installed and enabled by default.
       You can verify this with:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          $ rpm -qa | grep selinux
 
@@ -374,26 +374,26 @@ ensure the Agent has all the required permissions.
 
       In RHEL or CentOS:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          $ vi /etc/selinux/config
 
       Change the following line
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          SELINUX=enforcing
 
       to this
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          SELINUX=permissive
 
    #. Then set SELinux to permissive starting immediately, without
       requiring a system reboot.
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          $ setenforce permissive
 
@@ -405,25 +405,25 @@ ensure the Agent has all the required permissions.
       In Ubuntu AppArmor is installed and enabled by default. You can
       verify this with:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          $ dpkg --list 'apparmor'
 
    #. Disable the AppArmor profiles for libvirt
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          $ ln -s /etc/apparmor.d/usr.sbin.libvirtd /etc/apparmor.d/disable/
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          $ ln -s /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper /etc/apparmor.d/disable/
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          $ apparmor_parser -R /etc/apparmor.d/usr.sbin.libvirtd
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          $ apparmor_parser -R /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper
 
@@ -491,13 +491,13 @@ proceed to configuring the network.
 
 First we configure eth0
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
 Make sure it looks similar to:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    DEVICE=eth0
    HWADDR=00:04:xx:xx:xx:xx
@@ -509,11 +509,11 @@ Make sure it looks similar to:
 
 We now have to configure the VLAN interfaces:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ vi /etc/sysconfig/network-scripts/ifcfg-eth0.200
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    DEVICE=eth0.200
    HWADDR=00:04:xx:xx:xx:xx
@@ -527,7 +527,7 @@ We now have to configure the VLAN interfaces:
 Now that we have the VLAN interfaces configured we can add the bridges on top
 of them.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ vi /etc/sysconfig/network-scripts/ifcfg-cloudbr0
 
@@ -537,7 +537,7 @@ Now we configure cloudbr0 and include the Management IP of the hypervisor.
    The management IP of the hypervisor doesn't have to be in same subnet/VLAN as the
    management network, but its quite common.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    DEVICE=cloudbr0
    TYPE=Bridge
@@ -553,11 +553,11 @@ Now we configure cloudbr0 and include the Management IP of the hypervisor.
 
 We configure cloudbr1 as a plain bridge without an IP address
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ vi /etc/sysconfig/network-scripts/ifcfg-cloudbr1
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    DEVICE=cloudbr1
    TYPE=Bridge
@@ -582,13 +582,13 @@ Configure Ubuntu for Basic Networks
 All the required packages were installed when you installed libvirt, so
 we only have to configure the network.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ vi /etc/network/interfaces
 
 Modify the interfaces file to look like this:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    auto lo
    iface lo inet loopback
@@ -666,13 +666,13 @@ proceed to configuring the network.
 
 First we configure eth0
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
 Make sure it looks similar to:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    DEVICE=eth0
    HWADDR=00:04:xx:xx:xx:xx
@@ -684,11 +684,11 @@ Make sure it looks similar to:
 
 We now have to configure the VLAN interfaces:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ vi /etc/sysconfig/network-scripts/ifcfg-eth1
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    DEVICE=eth1
    HWADDR=00:04:xx:xx:xx:xx
@@ -701,7 +701,7 @@ We now have to configure the VLAN interfaces:
 Now we have the VLAN interfaces configured we can add the bridges on top
 of them.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ vi /etc/sysconfig/network-scripts/ifcfg-cloudbr0
 
@@ -711,7 +711,7 @@ Now we configure cloudbr0 and include the Management IP of the hypervisor.
    The management IP of the hypervisor doesn't have to be in same subnet/VLAN as the
    management network, but its quite common.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    DEVICE=cloudbr0
    TYPE=Bridge
@@ -727,11 +727,11 @@ Now we configure cloudbr0 and include the Management IP of the hypervisor.
 
 We configure cloudbr1 as a plain bridge without an IP address
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ vi /etc/sysconfig/network-scripts/ifcfg-cloudbr1
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    DEVICE=cloudbr1
    TYPE=Bridge
@@ -756,13 +756,13 @@ Configure Ubuntu for Advanced Networks
 All the required packages were installed when you installed libvirt, so
 we only have to configure the network.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ vi /etc/network/interfaces
 
 Modify the interfaces file to look like this:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    auto lo
    iface lo inet loopback
@@ -879,7 +879,7 @@ the OpenVswitch database.
 First we create a main bridge connected to the eth0 interface. Next we
 create three fake bridges, each connected to a specific vlan tag.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # ovs-vsctl add-br cloudbr
    # ovs-vsctl add-port cloudbr eth0
@@ -897,13 +897,13 @@ installed, we can proceed to configuring the network.
 
 First we configure eth0
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
 Make sure it looks similar to:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    DEVICE=eth0
    HWADDR=00:04:xx:xx:xx:xx
@@ -914,11 +914,11 @@ Make sure it looks similar to:
 
 We have to configure the base bridge with the trunk.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ vi /etc/sysconfig/network-scripts/ifcfg-cloudbr
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    DEVICE=cloudbr
    ONBOOT=yes
@@ -929,11 +929,11 @@ We have to configure the base bridge with the trunk.
 
 We now have to configure the three VLAN bridges:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ vi /etc/sysconfig/network-scripts/ifcfg-mgmt0
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    DEVICE=mgmt0
    ONBOOT=yes
@@ -945,11 +945,11 @@ We now have to configure the three VLAN bridges:
    GATEWAY=192.168.42.1
    NETMASK=255.255.255.0
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ vi /etc/sysconfig/network-scripts/ifcfg-cloudbr0
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    DEVICE=cloudbr0
    ONBOOT=yes
@@ -958,11 +958,11 @@ We now have to configure the three VLAN bridges:
    DEVICETYPE=ovs
    TYPE=OVSBridge
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ vi /etc/sysconfig/network-scripts/ifcfg-cloudbr1
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    DEVICE=cloudbr1
    ONBOOT=yes
@@ -1009,34 +1009,34 @@ Open ports in RHEL/CentOS
 RHEL and CentOS use iptables for firewalling the system, you can open
 extra ports by executing the following iptable commands:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ iptables -I INPUT -p tcp -m tcp --dport 22 -j ACCEPT
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ iptables -I INPUT -p tcp -m tcp --dport 1798 -j ACCEPT
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ iptables -I INPUT -p tcp -m tcp --dport 16509 -j ACCEPT
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ iptables -I INPUT -p tcp -m tcp --dport 16514 -j ACCEPT
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ iptables -I INPUT -p tcp -m tcp --dport 5900:6100 -j ACCEPT
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ iptables -I INPUT -p tcp -m tcp --dport 49152:49216 -j ACCEPT
 
 These iptable settings are not persistent accross reboots, we have to
 save them first.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ iptables-save > /etc/sysconfig/iptables
 
@@ -1049,27 +1049,27 @@ is a Python wrapper around iptables.
 
 To open the required ports, execute the following commands:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ ufw allow proto tcp from any to any port 22
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ ufw allow proto tcp from any to any port 1798
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ ufw allow proto tcp from any to any port 16509
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ ufw allow proto tcp from any to any port 16514
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ ufw allow proto tcp from any to any port 5900:6100
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    $ ufw allow proto tcp from any to any port 49152:49216
 

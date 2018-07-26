@@ -122,7 +122,7 @@ Update System-VM templates
       |            | Routing: no                                                |
       +------------+------------------------------------------------------------+
 
-#. Register |version| systemvm template:
+#. Register |release| systemvm template:
    
    #. Click Register template.
 
@@ -136,9 +136,9 @@ Update System-VM templates
       +------------+------------------------------------------------------------+
       | Hypervisor | Description                                                |
       +============+============================================================+
-      | XenServer  | Name: systemvm-xenserver-|version|                         |
+      | XenServer  | Name: systemvm-xenserver-4.6                               |
       |            |                                                            |
-      |            | Description: systemvm-xenserver-|version|                  |
+      |            | Description: systemvm-xenserver-4.6                        |
       |            |                                                            |
       |            | URL: |sysvm64-url-xen|                                     |
       |            |                                                            |
@@ -162,9 +162,9 @@ Update System-VM templates
       |            |                                                            |
       |            | Routing: no                                                |
       +------------+------------------------------------------------------------+
-      | KVM        | Name: systemvm-kvm-|version|                               |
+      | KVM        | Name: systemvm-kvm-4.6                                     |
       |            |                                                            |
-      |            | Description: systemvm-kvm-|version|                        |
+      |            | Description: systemvm-kvm-4.6                              |
       |            |                                                            |
       |            | URL: |sysvm64-url-kvm|                                     |  
       |            |                                                            |
@@ -188,9 +188,9 @@ Update System-VM templates
       |            |                                                            |
       |            | Routing: no                                                |
       +------------+------------------------------------------------------------+
-      | VMware     | Name: systemvm-vmware-|version|                            |
+      | VMware     | Name: systemvm-vmware-4.6                                  |
       |            |                                                            |
-      |            | Description: systemvm-vmware-|version|                     |
+      |            | Description: systemvm-vmware-4.6                           |
       |            |                                                            |
       |            | URL: |sysvm64-url-vmware|                                  |
       |            |                                                            |

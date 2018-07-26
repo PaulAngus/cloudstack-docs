@@ -97,6 +97,7 @@ account by using the assignVirtualMachine API. A domain or sub-domain
 administrator can do the same for VMs within the domain from one account
 to any other account in the domain or any of its sub-domains.
 
+.. _using-dynamics-roles:
 
 Using Dynamic Roles
 -------------------
@@ -169,7 +170,7 @@ Options:
 Example:
  
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    sudo python /usr/share/cloudstack-common/scripts/util/migrate-dynamicroles.py -u cloud -p cloud -H localhost -P 3306 -f /etc/cloudstack/management/commands.properties
 

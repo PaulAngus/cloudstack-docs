@@ -14,20 +14,20 @@
    under the License.
 
 
-Validate |version| source code tarball
+Validate |release| source code tarball
 ======================================
 
 #. Perform the following to verify the artifacts:
 
    #. (optional) Install GPG keys if needed:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
       
          $ sudo apt-get install gpg
 
    #. Import the GPG keys stored in the source distribution's KEYS file
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          $ gpg --import KEYS
 
@@ -36,17 +36,17 @@ Validate |version| source code tarball
 
       For example:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          $ gpg --recv-keys CC56CEA8
 
    #. Verify signatures and hash files:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
-         $ gpg --verify apache-cloudstack-4.11-src.tar.bz2.asc
-         $ gpg --print-md MD5 apache-cloudstack-4.11-src.tar.bz2 | diff - apache-cloudstack-4.11-src.tar.bz2.md5
-         $ gpg --print-md SHA512 apache-cloudstack-4.11-src.tar.bz2 | diff - apache-cloudstack-4.11-src.tar.bz2.sha
+         $ gpg --verify apache-cloudstack-|release|-src.tar.bz2.asc
+         $ gpg --print-md MD5 apache-cloudstack-|release|-src.tar.bz2 | diff - apache-cloudstack-|release|-src.tar.bz2.md5
+         $ gpg --print-md SHA512 apache-cloudstack-|release|-src.tar.bz2 | diff - apache-cloudstack-|release|-src.tar.bz2.sha
 
       Each of these commands should return no output. Any output from
       them implies that there is a difference between the hash you
@@ -60,14 +60,14 @@ Validate |version| source code tarball
 
    #. Create two new temporary directories:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          $ mkdir /tmp/cloudstack/git
          $ mkdir /tmp/cloudstack/tree
 
-   #. Check out the |version| branch:
+   #. Check out the |release| branch:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          $ git clone https://git-wip-us.apache.org/repos/asf/cloudstack.git /tmp/cloudstack/git
          $ cd /tmp/cloudstack/git
@@ -75,25 +75,25 @@ Validate |version| source code tarball
 
    #. Unpack the release artifact:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          $ cd /tmp/cloudstack
-         $ tar xvfj apache-cloudstack-4.10-src.tar.bz2
+         $ tar xvfj apache-cloudstack-|release|-src.tar.bz2
 
    #. Compare the contents of the release artifact with the contents
       pulled from the repo:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
-         $ diff -r /tmp/cloudstack/apache-cloudstack-4.11-src /tmp/cloudstack/tree
+         $ diff -r /tmp/cloudstack/apache-cloudstack-|release|-src /tmp/cloudstack/tree
 
       Ensure that content is the same.
 
    #. Verify the Code License Headers:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
-         $ cd /tmp/cloudstack/apache-cloudstack-4.11-src
+         $ cd /tmp/cloudstack/apache-cloudstack-|release|-src
          $ mvn --projects='org.apache.cloudstack:cloudstack' org.apache.rat:apache-rat-plugin:0.8:check
 
       The build fails if any non-compliant files are present that are

@@ -1,4 +1,4 @@
-.. Licensed to the Apache Software Foundation (ASF) under one
+﻿.. Licensed to the Apache Software Foundation (ASF) under one
    or more contributor license agreements.  See the NOTICE file
    distributed with this work for additional information#
    regarding copyright ownership.  The ASF licenses this file
@@ -14,13 +14,13 @@
    under the License.
 
 
-What's New in |version|
+What's New in |release|
 =======================
 
 What's New in 4.11.1.0
 ----------------------
 
-The new 4.11.1.0 version is a |version| maintainance release containing over 140
+The new |release| version is a |version| maintainance release containing over 140
 fixes and improvements on the 4.11.0.0 release.
 
 These include the speeding up of virtual router deployments and fixes for corner cases

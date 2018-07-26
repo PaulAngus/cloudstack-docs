@@ -41,7 +41,7 @@ CloudStack system VMs.
 
    *  For Hyper-V
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt \
          -m /mnt/secondary \
@@ -52,7 +52,7 @@ CloudStack system VMs.
 
    *  For XenServer:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt \
          -m /mnt/secondary \
@@ -63,7 +63,7 @@ CloudStack system VMs.
 
    *  For vSphere:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt \
          -m /mnt/secondary \
@@ -74,7 +74,7 @@ CloudStack system VMs.
 
    *  For KVM:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt \
          -m /mnt/secondary \
@@ -85,7 +85,7 @@ CloudStack system VMs.
 
    *  For LXC:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt \
          -m /mnt/secondary \
@@ -96,7 +96,7 @@ CloudStack system VMs.
 
    *  For OVM3:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt \
          -m /mnt/secondary \
@@ -112,7 +112,7 @@ CloudStack system VMs.
    When the script has finished, unmount secondary storage and remove
    the created directory.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       umount /mnt/secondary
       rmdir /mnt/secondary

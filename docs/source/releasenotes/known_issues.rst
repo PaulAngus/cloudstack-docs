@@ -13,17 +13,17 @@
    specific language governing permissions and limitations
    under the License.
 
-Known Issues in |release|
+Known Issues in |version|
 =========================
 
 Apache CloudStack uses `Jira 
 <https://issues.apache.org/jira/browse/CLOUDSTACK>`_ to track its issues. All 
-new features and bugs for |release| have been tracked in Jira, and have a 
+new features and bugs for |version| have been tracked in Jira, and have a 
 standard naming convention of "CLOUDSTACK-NNNN" where "NNNN" is the issue 
 number.
 
 For the list of known issues, see `Known Issues in 
-<https://issues.apache.org/jira/issues/?filter=12338176>`_ |release|.
+<https://issues.apache.org/jira/issues/?filter=12338176>`_ |version|.
 
 .. cssclass:: table-striped table-bordered table-hover
 

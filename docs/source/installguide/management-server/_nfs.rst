@@ -31,11 +31,9 @@ CloudStack.
 
 The requirements for primary and secondary storage are described in:
 
--  `“About Primary Storage” 
-   <http://docs.cloudstack.apache.org/en/latest/concepts.html#about-primary-storage>`_
+-  :ref:`about-primary-storage`
 
--  `“About Secondary Storage” 
-   <http://docs.cloudstack.apache.org/en/latest/concepts.html#about-secondary-storage>`_
+-  :ref:`about-secondary-storage`
 
 A production installation typically uses a separate NFS server. 
 See :ref:`using-a-separage-nfs-server`.
@@ -64,7 +62,7 @@ operating system version.
    if you are using NFS for primary storage as well, create a second NFS
    share. For example:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       mkdir -p /export/primary
       mkdir -p /export/secondary
@@ -73,33 +71,33 @@ operating system version.
    Export the NFS share(s) with
    rw,async,no\_root\_squash,no\_subtree\_check. For example:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       vi /etc/exports
 
    Insert the following line.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
-      /export  *(rw,async,no_root_squash,no_subtree_check)
+      /export  \*(rw,async,no_root_squash,no_subtree_check)
 
 #. Export the /export directory.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       exportfs -a
 
 #. On the management server, create a mount point for secondary storage.
    For example:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       mkdir -p /mnt/secondary
 
 #. Mount the secondary storage on your Management Server. Replace the
    example NFS server name and NFS share paths below with your own.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       mount -t nfs nfsservername:/export/secondary /mnt/secondary
 
@@ -120,14 +118,14 @@ operating system version.
 
 #. On RHEL/CentOS systems, you'll need to install the nfs-utils package:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       yum install nfs-utils
 
 #. On the Management Server host, create two directories that you will
    use for primary and secondary storage. For example:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       mkdir -p /export/primary
       mkdir -p /export/secondary
@@ -136,31 +134,31 @@ operating system version.
    Export the NFS share(s) with
    rw,async,no\_root\_squash,no\_subtree\_check. For example:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       vi /etc/exports
 
    Insert the following line.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
-      /export  *(rw,async,no_root_squash,no_subtree_check)
+      /export  \*(rw,async,no_root_squash,no_subtree_check)
 
 #. Export the /export directory.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       exportfs -a
 
 #. Edit the /etc/sysconfig/nfs file.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       vi /etc/sysconfig/nfs
 
    Uncomment the following lines:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       LOCKD_TCPPORT=32803
       LOCKD_UDPPORT=32769
@@ -171,14 +169,14 @@ operating system version.
 
 #. Edit the /etc/sysconfig/iptables file.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       vi /etc/sysconfig/iptables
 
    Add the following lines at the beginning of the INPUT chain, where
    <NETWORK> is the network that you'll be using:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       -A INPUT -s <NETWORK> -m state --state NEW -p udp --dport 111 -j ACCEPT
       -A INPUT -s <NETWORK> -m state --state NEW -p tcp --dport 111 -j ACCEPT
@@ -194,7 +192,7 @@ operating system version.
 
 #. Run the following commands:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       service iptables restart
       service iptables save
@@ -203,7 +201,7 @@ operating system version.
    domain to /etc/idmapd.conf on both the hypervisor host and Management
    Server.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       vi /etc/idmapd.conf
 
@@ -211,7 +209,7 @@ operating system version.
    idmapd.conf and replace the value in the file with your own domain.
    In the example below, the domain is company.com.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       Domain = company.com
 
@@ -228,7 +226,7 @@ operating system version.
    #. Be sure NFS and rpcbind are running. The commands might be
       different depending on your OS. For example:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          service rpcbind start
          service nfs start
@@ -240,7 +238,7 @@ operating system version.
       directories. For example, substitute your own management server
       name:
 
-      .. sourcecode:: bash
+      .. parsed-literal::
 
          mkdir /primary
          mount -t nfs <management-server-name>:/export/primary

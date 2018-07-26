@@ -60,7 +60,7 @@ node.
 
 #. Check for a fully qualified hostname.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       hostname --fqdn
 
@@ -70,7 +70,7 @@ node.
 
 #. Make sure that the machine can reach the Internet.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       ping cloudstack.apache.org
 
@@ -81,11 +81,11 @@ node.
 
    Install NTP.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       yum install ntp
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       sudo apt-get install openntpd
 

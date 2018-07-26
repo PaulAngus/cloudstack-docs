@@ -30,14 +30,14 @@ OS for the Management Server.
    installed on the hypervisor hosts.
 
    Download vhd-util from
-   `vhd-util <http://download.cloud.com.s3.amazonaws.com/tools/vhd-util>`_
+   `vhd-util <http://download.cloudstack.org/tools/vhd-util>`_
 
    Copy vhd-util to
    ``/usr/share/cloudstack-common/scripts/vm/hypervisor/xenserver``.
 
 #. Ensure that necessary services are started and set to start on boot.
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       service rpcbind start
       service nfs start
@@ -48,7 +48,7 @@ OS for the Management Server.
    argument in this case. (For more details about the arguments to this
    command, see :ref:`install-database-on-separate-node`.)
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       cloudstack-setup-databases cloud:dbpassword@dbhost \
       -e encryption_type \
@@ -58,7 +58,7 @@ OS for the Management Server.
 
 #. Configure the OS and start the Management Server:
 
-   .. sourcecode:: bash
+   .. parsed-literal::
 
       cloudstack-setup-management
 
@@ -67,6 +67,4 @@ OS for the Management Server.
 
 #. Repeat these steps on each additional Management Server.
 
-#. Be sure to configure a load balancer for the Management Servers. See
-   `“Management Server Load Balancing” 
-   <http://docs.cloudstack.apache.org/en/latest/administration_guide.html?highlight=management%20server%20load#management-server-load-balancing>`_.
+#. Be sure to configure a load balancer for the Management Servers. See :ref:`management-server-load-balancing`

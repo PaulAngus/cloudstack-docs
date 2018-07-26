@@ -19,9 +19,7 @@ Once you've upgraded the packages on your management servers, you'll
 need to restart the system VMs. Ensure that the admin port is set to
 8096 by using the "integration.api.port" global parameter. This port
 is used by the cloud-sysvmadm script at the end of the upgrade
-procedure. For information about how to set this parameter, see
-`Setting Global Configuration Parameters 
-<http://docs.cloudstack.apache.org/projects/cloudstack-installation/en/latest/configuration.html#setting-global-configuration-parameters>`_ in the Installation Guide.
+procedure. For information about how to set this parameter, see :ref:`configuration parameters <configuration-parameters>`
 Changing this parameter will require management server restart. Also
 make sure port 8096 is open in your local host firewall to do this.
 
@@ -29,20 +27,20 @@ There is a script that will do this for you, all you need to do is
 run the script and supply the IP address for your MySQL instance and
 your MySQL credentials:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # nohup cloudstack-sysvmadm -d IPaddress -u cloud -p password -a > sysvm.log 2>&1 &
 
 You can monitor the log for progress. The process of restarting the
 system VMs can take an hour or more.
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    # tail -f sysvm.log
 
 The output to ``sysvm.log`` will look something like this:
 
-.. sourcecode:: bash
+.. parsed-literal::
 
    Stopping and starting 1 secondary storage vm(s)...
    Done stopping and starting secondary storage vm(s)
